@@ -40,4 +40,9 @@ public class CameraFollow : MonoBehaviour {
 			transform.position = newPosition;
 		}
 	}
+
+	public void SetTarget(Transform target)
+	{
+		this.target = target;
+	}
 }
