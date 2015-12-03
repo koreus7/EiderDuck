@@ -18,6 +18,6 @@ public class DieOnHit : MonoBehaviour {
 		GameObject instance  = (GameObject)Instantiate(Resources.Load("ExplodeParticles"));
 		instance.transform.position = this.transform.position;
 		Destroy (this.gameObject);
-		Camera.main.SendMessageUpwards ("Shake");
+		Camera.main.SendMessageUpwards ("ShakeWithIntensity", 2.0f);
 	}
 }

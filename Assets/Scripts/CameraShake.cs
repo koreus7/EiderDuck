@@ -11,15 +11,21 @@ public class CameraShake : MonoBehaviour {
 
 	float _elapsedTime = 0.0f;
 	float _shakeTime   = 0.5f;
-	float _shakeIntensity = 10.0f;
+	float _shakeIntensity = 0.0f;
 	float _noiseScale = 20.0f;
 
 	private bool _shaking = false;
 
 	public void Shake()
 	{
+		ShakeWithIntensity (10.0f);
+	}
+
+	public void ShakeWithIntensity(float intensity)
+	{
 		_shaking = true;
 		_elapsedTime = 0.0f;
+		_shakeIntensity = intensity;
 	}
 
 	void FixedUpdate () {
