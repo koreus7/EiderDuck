@@ -50,6 +50,7 @@
      <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch2.cs" />
      <Compile Include="Assets\2DLightAssets\Scripts\rotate.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\DieOnHit.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />

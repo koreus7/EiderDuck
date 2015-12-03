@@ -45,24 +45,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\Atomizer\Atomizer.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\AtomizerEffect.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\AtomizerEffectGroup.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\AtomizerGameObjectExtensions.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\GeometryHelper.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\LayerHelper.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\BreakAndReform.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Disintegrate.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Jiggle.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Percolate.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Pop.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Pulse.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Smolder.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\SwapColours.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Vacuum.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ManualParticleEffects\Warp.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\ParticleSystemHelper.cs" />
-     <Compile Include="Assets\Plugins\Atomizer\Snapshot.cs" />
      <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
