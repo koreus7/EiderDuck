@@ -10,13 +10,15 @@ public class SeekerAI : MonoBehaviour {
 	public float repelance = 1.0f;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		_target = GameObject.Find (targetName).transform;
 		_rigidBody = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () 
+	{
 
 		//If we started before the player.
 		if (_target == null) 
@@ -33,12 +35,12 @@ public class SeekerAI : MonoBehaviour {
 		_rigidBody.AddForce (forceVector);
 	}
 
-	void NearEnemy(object enemy)
+	public void NearEnemy(object enemy)
 	{
 		var enemyTransform = ((GameObject)enemy).transform;
 		var distance = enemyTransform.position - transform.position;
 		distance.Normalize ();
-		_rigidBody.AddForce (distance*repelance); 
+		_rigidBody.AddForce (-distance*repelance); 
 	}
 	
 }

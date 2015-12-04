@@ -10,18 +10,20 @@ public class NearTrigger : MonoBehaviour {
 	public string name;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log ("NearTrigger");
-		if (other.name == name) {
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.name.StartsWith(name)) {
 			this.gameObject.SendMessageUpwards ("Near" + name, other.gameObject);
 		}
 	}

@@ -28,7 +28,8 @@ public class CameraShake : MonoBehaviour {
 		_shakeIntensity = intensity;
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate () 
+	{
 
 		if (_shaking) 
 		{
