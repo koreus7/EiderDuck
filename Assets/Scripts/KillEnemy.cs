@@ -7,18 +7,21 @@ public class KillEnemy : MonoBehaviour {
 
 	private Vector3 _lastPosition;
 	private Vector3 _velocity;
+
 	private Rigidbody2D _rigidBody;
 	private SpriteRenderer _renderer;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		_rigidBody = GetComponent<Rigidbody2D> ();
 		_lastPosition = transform.position;
 		_renderer = GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		_velocity = (transform.position - _lastPosition) / Time.deltaTime;
 
 		var color = _renderer.color;
@@ -42,9 +45,9 @@ public class KillEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) 
 	{
-		Debug.Log ("Hit " + _velocity.magnitude);
-		if (_velocity.magnitude > minimumVelocity) {
-			other.SendMessage ("Hit");
+		if (_velocity.magnitude > minimumVelocity) 
+		{
+			other.SendMessage ("Hit", SendMessageOptions.DontRequireReceiver);
 		}
 
 	}

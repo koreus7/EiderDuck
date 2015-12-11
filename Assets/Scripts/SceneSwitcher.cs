@@ -19,7 +19,6 @@ public class SceneSwitcher : MonoBehaviour {
 			}
 			else 
 			{
-				Debug.Log ("Fo real");
 				_triggered = false;
 				Application.LoadLevel(sceneName);
 			}
