@@ -49,7 +49,7 @@ GameObject:
   - 114: {fileID: 11485622}
   - 114: {fileID: 11406258}
   - 82: {fileID: 8257600}
-  - 114: {fileID: 11403400}
+  - 114: {fileID: 11459270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -223,17 +223,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11403400
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d03e654964b410499c782033a47bb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11406258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +245,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98a2de2d7408f4b72876708f1f5b1bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11459270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ada05e2bd97471a93ed6a7f7484162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11474978

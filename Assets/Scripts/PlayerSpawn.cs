@@ -12,7 +12,9 @@ public class PlayerSpawn : MonoBehaviour {
 		GameObject camera = (GameObject)Instantiate (Resources.Load ("CameraContainer"));
 		camera.BroadcastMessage ("SetTarget", player.transform);
 
-		GameObject UI = (GameObject)Instantiate (Resources.Load ("UI"));
+		Instantiate (Resources.Load ("UI"));
+
+		Instantiate (Resources.Load ("EventSystem"));
 
 		player.transform.position = this.transform.position;
 	}
