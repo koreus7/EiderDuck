@@ -3,12 +3,18 @@ using System.Collections;
 
 public class PlayerProperties : MonoBehaviour {
 
+	public static PlayerProperties Inst { get; private set; }
+
 	public float defaultHealth = 3;
 	public AudioClip hitSound;
 
 	private AudioSource _audioSource;
 	private float _health = 0;
 
+	public PlayerProperties()
+	{
+		Inst = this;
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -47,6 +53,11 @@ public class PlayerProperties : MonoBehaviour {
 	}
 
 	public void SceneSwitch()
+	{
+		SaveProperties ();
+	}
+
+	void OnApplicationQuit() 
 	{
 		SaveProperties ();
 	}

@@ -3,9 +3,11 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
 
-	public float spawnPeriod = 0.2f;
+	public float spawnPeriod = 5.0f;
 
 	private float _spawnPeriodCounter = 0.0f;
+
+	public int waveSize = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +24,11 @@ public class EnemySpawner : MonoBehaviour {
 		else 
 		{
 			_spawnPeriodCounter = 0;
-			Spawn();
+
+			for( int i = 0; i < waveSize; i++)
+			{
+				Spawn();
+			}
 		}
 
 	
