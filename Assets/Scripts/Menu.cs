@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour {
 	public GameObject backpackPanel;
 	public GameObject settingsPanel;
 	public Slider volumeSlider;
+	public Slider difficultySlider;
 	bool menuOpen = false;
 	bool backpackOpen = false;
 	bool settingsOpen = false;
@@ -26,17 +27,25 @@ public class Menu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		updateFoodUI ();
+
 	}
-	
+
+
 	// Update is called once per frame
 	void LateUpdate () {
 		if (Input.GetButtonDown ("Menu")) {
 			if (menuOpen == false) {
+				LoadSettings();
 				openMenuPanel ();
 			} else {
 				closeMenuPanel();
 			}
 		}
+	}
+
+	private void LoadSettings()
+	{
+		difficultySlider.value = PlayerProperties.Inst.DificultyLevel;
 	}
 
 	public void openMenuPanel() {
@@ -77,6 +86,12 @@ public class Menu : MonoBehaviour {
 			audios.volume = volumeSlider.value;
 		}
 	}
+
+	public void DiffucultyChanged()
+	{
+		PlayerProperties.Inst.DificultyLevel = (int)difficultySlider.value;
+	}
+
 	public void exitGame () {
 		Application.Quit ();
 	}

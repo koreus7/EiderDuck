@@ -29,7 +29,7 @@ public class SeekerAI : MonoBehaviour {
 		Vector3 joiningLine = _target.transform.position - transform.position;
 		Vector2 joiningLine2D = new Vector2 (joiningLine.x, joiningLine.y);
 
-		Vector2 forceVector = joiningLine2D.normalized * speed;
+		Vector2 forceVector = joiningLine2D.normalized * speed * (PlayerProperties.Inst.DificultyLevel + 1);
 
 
 		_rigidBody.AddForce (forceVector);

@@ -5,11 +5,17 @@ public class PlayerProperties : MonoBehaviour {
 
 	public static PlayerProperties Inst { get; private set; }
 
+
+
+	public int DificultyLevel;
+
 	public float defaultHealth = 3;
 	public AudioClip hitSound;
 
 	private AudioSource _audioSource;
 	private float _health = 0;
+
+
 
 	public PlayerProperties()
 	{
@@ -21,6 +27,7 @@ public class PlayerProperties : MonoBehaviour {
 	{
 		_audioSource = GetComponent<AudioSource> ();
 		_health  = PlayerPrefs.GetFloat ("health", defaultHealth);
+		DificultyLevel = PlayerPrefs.GetInt ("difficulty");
 	}
 	
 	// Update is called once per frame
@@ -48,7 +55,9 @@ public class PlayerProperties : MonoBehaviour {
 
 	void SaveProperties()
 	{
-		PlayerPrefs.SetFloat ("health", _health);
+		PlayerPrefs.SetFloat ("health"		,_health);
+		PlayerPrefs.SetInt   ("difficulty"	,DificultyLevel);
+
 		PlayerPrefs.Save ();
 	}
 
