@@ -5,7 +5,9 @@ public class PlayerProperties : MonoBehaviour {
 
 	public static PlayerProperties Inst { get; private set; }
 
+	public static GameObject Player { get { return Inst.gameObject; } }
 
+	public static Vector3 Position  { get { return Inst.gameObject.transform.position; } }
 
 	public int DificultyLevel;
 

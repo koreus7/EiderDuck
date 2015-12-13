@@ -7,7 +7,10 @@ public class EnemySpawner : MonoBehaviour {
 
 	private float _spawnPeriodCounter = 0.0f;
 
+	public float activationRadius = 20.0f;	
+
 	public int waveSize = 10;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -25,18 +28,34 @@ public class EnemySpawner : MonoBehaviour {
 		{
 			_spawnPeriodCounter = 0;
 
-			for( int i = 0; i < waveSize; i++)
+			Vector3 playerDisplacement = this.transform.position - PlayerProperties.Position;
+
+			if(playerDisplacement.magnitude < activationRadius)
 			{
-				Spawn();
+				SpawnWave();
 			}
 		}
 
 	
 	}
 
-	void Spawn ()
+	void SpawnWave()
+	{
+		for( int i = 0; i < waveSize; i++)
+		{
+			SpawnOne();
+		}
+	}
+
+	void SpawnOne ()
 	{
 		GameObject instance = (GameObject)Instantiate(Resources.Load("Enemy"));
-		instance.transform.position = transform.position;
+		instance.transform.position = this.transform.position;
+		instance.transform.parent = this.transform;
+	}
+
+	void OnDrawGizmos()
+	{
+		DebugExtension.DebugCircle (transform.position, new Vector3 (0, 1, 1), Color.red, activationRadius);
 	}
 }
