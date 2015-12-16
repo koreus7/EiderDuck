@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour {
 	public float activationRadius = 20.0f;	
 
 	public int waveSize = 10;
+
+	public GameObject enemyPrefab;
 	
 
 	// Use this for initialization
@@ -49,13 +51,24 @@ public class EnemySpawner : MonoBehaviour {
 
 	void SpawnOne ()
 	{
-		GameObject instance = (GameObject)Instantiate(Resources.Load("Enemy"));
-		instance.transform.position = this.transform.position;
-		instance.transform.parent = this.transform;
+		if (enemyPrefab == null)
+		{
+			GameObject instance = (GameObject)Instantiate (Resources.Load ("Enemy"));
+			instance.transform.position = this.transform.position;
+			instance.transform.parent = this.transform;
+		} 
+		else
+		{
+			Instantiate (enemyPrefab, transform.position, transform.rotation);
+		}
+
 	}
 
 	void OnDrawGizmos()
 	{
-		DebugExtension.DebugCircle (transform.position, new Vector3 (0, 1, 1), Color.red, activationRadius);
+		var color = Color.red;
+		color.a = 0.4f;
+		Gizmos.color = color;
+		Gizmos.DrawWireSphere (transform.position, activationRadius);
 	}
 }

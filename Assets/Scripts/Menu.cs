@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour {
 	public GameObject menuPanel;
 	public GameObject backpackPanel;
 	public GameObject settingsPanel;
+	public GameObject foodPanel;
 	public Slider volumeSlider;
 	public Slider difficultySlider;
 	bool menuOpen = false;
@@ -21,7 +22,10 @@ public class Menu : MonoBehaviour {
 	public Text healthText;
 	public Text amountText;
 	public Image foodImage;
-	
+
+
+	bool cursorStateBefore;
+
 	int currentFoodIndex = 0;
 
 	// Use this for initialization
@@ -36,9 +40,12 @@ public class Menu : MonoBehaviour {
 		if (Input.GetButtonDown ("Menu")) {
 			if (menuOpen == false) {
 				LoadSettings();
+				cursorStateBefore = Cursor.visible;
+				Cursor.visible = true;
 				openMenuPanel ();
 			} else {
 				closeMenuPanel();
+				Cursor.visible = cursorStateBefore;
 			}
 		}
 	}
@@ -77,6 +84,18 @@ public class Menu : MonoBehaviour {
 		settingsOpen = true;
 		closeBackpack ();
 	}
+
+	public void OpenFood()
+	{
+		foodPanel.SetActive (true);
+		updateFoodUI ();
+	}
+
+	public void CloseFood()
+	{
+		foodPanel.SetActive (false);
+	}
+
 	public void closeSettings(){
 		settingsPanel.SetActive (false);
 		settingsOpen = false;

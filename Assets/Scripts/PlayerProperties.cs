@@ -7,7 +7,22 @@ public class PlayerProperties : MonoBehaviour {
 
 	public static GameObject Player { get { return Inst.gameObject; } }
 
-	public static Vector3 Position  { get { return Inst.gameObject.transform.position; } }
+	public static Vector3 Position  
+	{
+		get 
+		{
+			if(Inst == null)
+			{
+				return new Vector3(0,0,0);
+			}
+			else 
+			{
+				return Inst.gameObject.transform.position; 
+			}
+		} 
+	}
+
+	public Color explodeColor;
 
 	public int DificultyLevel;
 
@@ -28,7 +43,7 @@ public class PlayerProperties : MonoBehaviour {
 	void Start () 
 	{
 		_audioSource = GetComponent<AudioSource> ();
-		_health  = PlayerPrefs.GetFloat ("health", defaultHealth);
+		_health = defaultHealth;//PlayerPrefs.GetFloat ("health", defaultHealth);
 		DificultyLevel = PlayerPrefs.GetInt ("difficulty");
 	}
 	
@@ -37,7 +52,7 @@ public class PlayerProperties : MonoBehaviour {
 	{
 		if (_health < 1) 
 		{
-			Application.LoadLevel(Application.loadedLevel);
+			Die();
 		}
 
 		if (Input.GetKeyDown (KeyCode.H)) 
@@ -46,6 +61,14 @@ public class PlayerProperties : MonoBehaviour {
 		}
 	}
 
+	void Die()
+	{
+		GameObject instance  = (GameObject)Instantiate(Resources.Load("PlayerDieEffect"));
+		instance.transform.position = this.transform.position;
+
+		gameObject.SetActive (false);
+	}
+	
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		if (coll.gameObject.name.StartsWith("Enemy")) {
@@ -53,6 +76,12 @@ public class PlayerProperties : MonoBehaviour {
 			_audioSource.PlayOneShot(hitSound);
 			coll.gameObject.BroadcastMessage("Hit");
 		}
+	}
+
+	public void TakeDamage(float amount)
+	{
+		Debug.Log ("Take " + amount + " damage");
+		_health -= amount;
 	}
 
 	void SaveProperties()

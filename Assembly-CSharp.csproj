@@ -45,16 +45,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
+     <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />
+     <Compile Include="Assets\Scripts\AI\SeekerAI.cs" />
+     <Compile Include="Assets\Scripts\BloodExplodeOnDie.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\Camera\ShakeOnAwake.cs" />
      <Compile Include="Assets\Scripts\ChangeApearanceOnSwim.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\ComponentExtensions.cs" />
-     <Compile Include="Assets\Scripts\DieOnHit.cs" />
+     <Compile Include="Assets\Scripts\CustomCursorOnEnable.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\Explode.cs" />
+     <Compile Include="Assets\Scripts\ExplodeOnEnemy.cs" />
+     <Compile Include="Assets\Scripts\ExtensionMethods\RigidBody2DExtensions.cs" />
+     <Compile Include="Assets\Scripts\FireBallControl.cs" />
+     <Compile Include="Assets\Scripts\FireProjectile.cs" />
      <Compile Include="Assets\Scripts\Food.cs" />
+     <Compile Include="Assets\Scripts\HideCursorOnEnable.cs" />
      <Compile Include="Assets\Scripts\KillEnemy.cs" />
-     <Compile Include="Assets\Scripts\Killable.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\NearTrigger.cs" />
@@ -62,11 +72,11 @@
      <Compile Include="Assets\Scripts\PlayerProperties.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
-     <Compile Include="Assets\Scripts\SeekerAI.cs" />
+     <Compile Include="Assets\Scripts\SelfDestructTimer.cs" />
+     <Compile Include="Assets\Scripts\SimpleHP.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
-     <None Include="Assets\Plugins\DebugDrawingExtension\readme.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
@@ -140,6 +150,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Plugins\True Explosions\System\Shaders\SphereVolumetricExplosion.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />

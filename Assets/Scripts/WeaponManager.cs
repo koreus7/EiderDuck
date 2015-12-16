@@ -77,7 +77,6 @@ public class WeaponManager : MonoBehaviour {
 			//Valid index so just set it.
 			_selectedWeaponIndex = i;
 			_selectedWeaponName  =  weapons[i].name;
-			Debug.Log("Selected " + _selectedWeaponName);
 			RefreshActiveWeapons ();	
 		}
 	}

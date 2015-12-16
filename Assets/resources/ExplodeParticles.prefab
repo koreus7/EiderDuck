@@ -120,7 +120,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170656}
   lengthInSec: .25999999
-  startDelay: 0
+  startDelay: .0500000007
   speed: 1
   randomSeed: 0
   looping: 0
@@ -1213,6 +1213,10 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 032be799d700346e48e0e20d6bf44db7, type: 3}
+    - target: {fileID: 0}
+      propertyPath: startDelay
+      value: .0500000007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170656}

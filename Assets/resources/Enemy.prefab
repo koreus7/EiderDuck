@@ -13,6 +13,7 @@ GameObject:
   - 50: {fileID: 5002236}
   - 114: {fileID: 11417788}
   - 114: {fileID: 11423854}
+  - 114: {fileID: 11484518}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -44,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -79.3714676, y: -14.9225025, z: 0}
+  m_LocalPosition: {x: -531, y: 102, z: 0}
   m_LocalScale: {x: 5.87977886, y: 5.87980318, z: 5.87980318}
   m_Children:
   - {fileID: 461818}
@@ -117,7 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetName: Player
   speed: 50
-  repelance: 200
+  repelance: 500
+  standOffDistance: 0
 --- !u!114 &11423854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +143,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Enemy
+--- !u!114 &11484518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d1dadbc8bf44b2eb5016750ea844e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!212 &21288024
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -173,7 +187,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: repelance
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138868}
