@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432142}
   - 114: {fileID: 11475996}
-  - 114: {fileID: 11436430}
+  - 114: {fileID: 11415148}
   m_Layer: 0
   m_Name: FireExplosion
   m_TagString: Untagged
@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 424226}
   - 198: {fileID: 19864038}
   - 199: {fileID: 19979686}
+  - 114: {fileID: 11436272}
   m_Layer: 0
   m_Name: Shockwave
   m_TagString: Untagged
@@ -89,7 +90,7 @@ Transform:
   - {fileID: 424226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11436430
+--- !u!114 &11415148
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,10 +98,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 117834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4184850417c074896a940126983ecae2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6151b4066defd42b3bc06070468a239b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 3
+  timeInSeconds: 2
+--- !u!114 &11436272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d748d1a35c347bd9ebd88ff7a9d188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11475996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,9 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8d72efe8143489b9fd3f67a90d8eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 14
-  damage: 1
-  force: 5500
 --- !u!198 &19834980
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2274,6 +2283,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: amount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeInSeconds
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

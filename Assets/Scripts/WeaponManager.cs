@@ -10,6 +10,8 @@ public class WeaponManager : MonoBehaviour {
 	
 	int _selectedWeaponIndex = 0;
 
+
+
 	void Awake()
 	{
 		//See if we saved our selected weapon
@@ -40,14 +42,15 @@ public class WeaponManager : MonoBehaviour {
 
 	void Update () 
 	{
-		if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+		if(Input.GetAxisRaw("Mouse ScrollWheel") < 0  ||  Input.GetButtonUp("NextWeapon"))
 		{
 			SelectNextWeapon();
 		}
-		if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+		if(Input.GetAxisRaw("Mouse ScrollWheel") > 0  ||  Input.GetButtonUp("PrevWeapon"))
 		{
 			SelectPreviousWeapon();
 		}   
+
 	}
 
 	void SelectNextWeapon()

@@ -47,8 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
      <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />
+     <Compile Include="Assets\Scripts\AI\FrogAI.cs" />
      <Compile Include="Assets\Scripts\AI\SeekerAI.cs" />
-     <Compile Include="Assets\Scripts\BloodExplodeOnDie.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Camera\ShakeOnAwake.cs" />
@@ -64,16 +64,21 @@
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
      <Compile Include="Assets\Scripts\Food.cs" />
      <Compile Include="Assets\Scripts\HideCursorOnEnable.cs" />
+     <Compile Include="Assets\Scripts\IHealthManager.cs" />
      <Compile Include="Assets\Scripts\KillEnemy.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\NearTrigger.cs" />
      <Compile Include="Assets\Scripts\ParticleAutoDelete.cs" />
+     <Compile Include="Assets\Scripts\ParticlesOnDie.cs" />
      <Compile Include="Assets\Scripts\PlayerProperties.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
      <Compile Include="Assets\Scripts\SelfDestructTimer.cs" />
+     <Compile Include="Assets\Scripts\ShockwaveSizeInterface.cs" />
      <Compile Include="Assets\Scripts\SimpleHP.cs" />
+     <Compile Include="Assets\Scripts\SimpleHealthBar.cs" />
+     <Compile Include="Assets\Scripts\SlowParticlesInterface.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -164,11 +169,17 @@
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="pseudoSinCos">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/2DLightAssets/Scripts/Helpers/pseudoSinCos.dll</HintPath>

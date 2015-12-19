@@ -3,12 +3,27 @@ using System.Collections;
 
 public class Explode : MonoBehaviour {
 
-	public float radius = 10.0f;
-	public float damage = 1.0f;
-	public float force = 10000f;
+	public float radiusMultiplier = 15.0f;
+	public float damageMultiplier = 1.0f;
+	public float forceMultiplier  = 5500.0f;
 
-	void MakeExplosionForce()
+	float radius;
+	float damage;
+	float force;
+
+
+	public void MakeExplosionForce(float amount)
 	{
+		radius = amount * radiusMultiplier;
+		damage = amount * damageMultiplier;
+		force  = amount * forceMultiplier;
+
+		Camera.main.SendMessageUpwards ("ShakeWithIntensity", amount * 2.0f);
+
+
+		//Set the graphic to the same size.
+		gameObject.BroadcastMessage ("SetSize", radius, SendMessageOptions.DontRequireReceiver);
+
 		Vector3 pos = transform.position;
 		
 		Collider2D[] colliders = Physics2D.OverlapCircleAll (pos, radius);
@@ -24,6 +39,8 @@ public class Explode : MonoBehaviour {
 				rb.AddExplosionForce(force, pos, radius);
 			}
 		}
+
+
 	}
 
 	
@@ -34,4 +51,5 @@ public class Explode : MonoBehaviour {
 		Gizmos.color = color;
 		Gizmos.DrawWireSphere (transform.position, radius);
 	}
+	
 }

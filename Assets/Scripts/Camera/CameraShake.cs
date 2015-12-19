@@ -10,7 +10,7 @@ using System.Collections;
 public class CameraShake : MonoBehaviour {
 
 	float _elapsedTime = 0.0f;
-	float _shakeTime   = 0.5f;
+	float _shakeTime   = 0.2f;
 	float _shakeIntensity = 0.0f;
 	float _noiseScale = 20.0f;
 
@@ -26,14 +26,22 @@ public class CameraShake : MonoBehaviour {
 		_shaking = true;
 		_elapsedTime = 0.0f;
 
+		float proposedIntensity = 0.0f;
+
 		if (PlayerProperties.Inst.DificultyLevel > 2)
 		{
-			_shakeIntensity = intensity * 4.0f;
+			proposedIntensity = intensity * 4.0f;
 		}
 		else
 		{
-			_shakeIntensity = intensity;
+			proposedIntensity = intensity;
 		}
+
+		_shakeTime = 0.1f * intensity;
+
+		//Bigest shake takes priority.
+		_shakeIntensity = Mathf.Max (_shakeIntensity, proposedIntensity);
+
 	}
 
 	void FixedUpdate () 

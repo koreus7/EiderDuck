@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MouseRotate : MonoBehaviour {
 
+	public float speed = 8.0f;
 
 	// Use this for initialization
 	void Start () 
@@ -15,6 +16,9 @@ public class MouseRotate : MonoBehaviour {
 	{
 		var ourScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		var direction = Input.mousePosition - ourScreenPosition; 
-		transform.rotation = Quaternion.Euler (new Vector3(0, 0, Mathf.Atan2 (direction.y,direction.x) * Mathf.Rad2Deg));
+
+		var desiredAngle = Quaternion.Euler (new Vector3(0, 0, Mathf.Atan2 (direction.y,direction.x) * Mathf.Rad2Deg));
+		transform.rotation = Quaternion.Lerp (transform.rotation, desiredAngle, Time.deltaTime*speed);
+
 	}
 }

@@ -19,7 +19,17 @@ public class CharacterMovement : MonoBehaviour {
 	
 	public float speed = 160.7f;
 
-	
+	//How long we slow down for when slowed.
+	public float slowTime = 1.5f;
+
+	//How much we slow down when slowed.
+	public float slowPercentage  = 0.4f;
+
+	public GameObject slowEffect;
+
+	float slowTimeElapsed = 0.0f;
+	bool currentlySlowed;
+
 	void Start () 
 	{
 		_inputAxes = new Vector2 ();
@@ -32,12 +42,42 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 
+	void Update()
+	{
+	}
+
+	void Slow()
+	{
+		currentlySlowed = true;
+		slowEffect.SendMessage("StartEffect");
+		slowTimeElapsed = 0.0f;
+	}
+
 	void FixedUpdate()
 	{
 		_inputAxes.x = Input.GetAxis ("Horizontal");
 		_inputAxes.y = Input.GetAxis ("Vertical"); 
-		
-		_rigidBody.AddForce (_inputAxes*speed);
+
+
+		Vector2 force = _inputAxes * speed;
+
+
+
+		if (slowTimeElapsed > slowTime)
+		{
+			currentlySlowed = false;
+			slowEffect.SendMessage("StopEffect");
+		} 
+
+		slowTimeElapsed += Time.deltaTime;
+
+
+		if (currentlySlowed)
+		{
+			force *= slowPercentage;
+		}
+
+		_rigidBody.AddForce (force);
 	}
 
 

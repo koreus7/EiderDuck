@@ -1,12 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SimpleHP : MonoBehaviour {
+public class SimpleHP : MonoBehaviour, IHealthManager 
+{
+	//IHealthManager implimentations
+	public float Health { get { return health; }}
+	public float MaxHealth  { get { return maxHealth; } } 
+
+	//public for inspector
+	public float maxHealth = 20.0f;
+
+	public float hitDamage = 1.0f;
 
 
-	public float health = 20.0f;
+	float health = 1.0f;
 
-	// Update is called once per frame
+	void Start()
+	{
+		health = maxHealth;
+	}
+
+
 	void Update () 
 	{
 		if (health <= 0)
@@ -15,15 +29,15 @@ public class SimpleHP : MonoBehaviour {
 		}
 	}
 
+	//Take specific damage.
 	public void TakeDamage(float amount)
 	{
-		Debug.Log ("Take " + amount);
 		health -= amount;
 	}
 
+	//Take damage based on our resitance.
 	public void Hit()
 	{
-		Debug.Log ("Hit");
-		health = 0;
+		health -= hitDamage;
 	}
 }
