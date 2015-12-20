@@ -1,14 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FireBallControl.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\[TestScript].cs">
     <Files>
-      <File FileName="Assets/Scripts/AI/SeekerAI.cs" Line="39" Column="4" />
-      <File FileName="Assets/Scripts/AI/FrogAI.cs" Line="19" Column="35" />
-      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharacterMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Explode.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SimpleHP.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FireBallControl.cs" Line="54" Column="31" />
+      <File FileName="Assets\Scripts\[TestScript].cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
