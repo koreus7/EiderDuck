@@ -13,25 +13,32 @@ public class FrogAI : MonoBehaviour
 	public float hopLatency = 0.1f;
 	
 	public float range = 20.0f;
-	
-	float elapsedSinceHop = 0.0f;
+
+	public float stunTime = 0.5f;
 
 	public GameObject particlePrefab;
 
 
-	
-	private Explode _explodeScript;
 	private Transform _target;
-	private Vector3 hopTarget = new Vector2();
-	private Vector3 positionBeforeHop = new Vector2();
-	private bool _hopping;
-	private BoxCollider2D _boxCollider;
-	
+
+
+	//Components
+	private BoxCollider2D 	_boxCollider;
+	private Explode 		_explodeScript;
+
+
+	//Hop state info
+	private float 	_elapsedSinceHop = 0.0f;
+	private bool 	_hopping;
+
+	private Vector3 hopTarget 			= new Vector2();
+	private Vector3 positionBeforeHop 	= new Vector2();
+
+
 	void Start () 
 	{
 		_target = GameObject.Find (targetName).transform;
 		_boxCollider = gameObject.GetComponent<BoxCollider2D> ();
-
 		_explodeScript = gameObject.GetComponent<Explode> ();
 
 	}
@@ -45,40 +52,45 @@ public class FrogAI : MonoBehaviour
 		{
 			_target = GameObject.Find (targetName).transform;
 		}
-		
-		
-		elapsedSinceHop += Time.deltaTime;
+
+
+		UpdateHopState ();
+
+	}
+
+	void UpdateHopState()
+	{
+		_elapsedSinceHop += Time.deltaTime;
 		
 		//Look where the target is and store it early (so it is not perfectly accurate).
-		if (elapsedSinceHop > hopPeriod - hopLatency)
+		if (_elapsedSinceHop > hopPeriod - hopLatency)
 		{
 			StoreTargetPosition();
 		}
 		
 		
-		if (elapsedSinceHop > hopPeriod )
+		if (_elapsedSinceHop > hopPeriod )
 		{
 			StartHop();
 		}
 		
 		if (_hopping)
 		{
-
 			
-			if(elapsedSinceHop > hopTime)
+			if(_elapsedSinceHop > hopTime)
 			{
-				_explodeScript.MakeExplosionForce(1.0f);
-				_hopping = false;
-				elapsedSinceHop = 0.0f;
+				EndHop();
 			}
 			else 
 			{
 				CalculateHopPosition();
 			}
 		}
-
+		
 		_boxCollider.isTrigger = _hopping;
 	}
+
+
 	
 	void CalculateHopPosition()
 	{
@@ -87,11 +99,7 @@ public class FrogAI : MonoBehaviour
 		float hopLineMagnitude = hopLine.magnitude;
 		Vector3 hoplineDirection = hopLine.normalized;
 		
-		float percentageHopDone = elapsedSinceHop / hopTime;
-
-
-		
-
+		float percentageHopDone = _elapsedSinceHop / hopTime;
 		
 		Vector3 newPosition = positionBeforeHop + hoplineDirection * hopLineMagnitude * percentageHopDone;
 
@@ -138,9 +146,16 @@ public class FrogAI : MonoBehaviour
 
 	void StartHop()
 	{
-		elapsedSinceHop = 0.0f;
+		_elapsedSinceHop = 0.0f;
 		positionBeforeHop = transform.position;
 		_hopping = true;
+	}
+
+	void EndHop()
+	{
+		_explodeScript.MakeExplosionForce(1.0f);
+		_hopping = false;
+		_elapsedSinceHop = 0.0f;
 	}
 
 	void OnDrawGizmos()
@@ -157,7 +172,13 @@ public class FrogAI : MonoBehaviour
 			collider.gameObject.SendMessage("Slow");
 		}
 
+	}
 
+	public void  KnockBack( KnockBackArgs args)
+	{
+		//Hop away
+		hopTarget = transform.position + (transform.position - new Vector3(args.center.x,args.center.y)).normalized * args.magnitude;
+		StartHop ();
 	}
 
 

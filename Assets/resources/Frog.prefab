@@ -60,6 +60,7 @@ GameObject:
   - 61: {fileID: 6129090}
   - 114: {fileID: 11408410}
   - 114: {fileID: 11449034}
+  - 114: {fileID: 11462550}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -87,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 126630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.5, y: -13.6000004, z: 0}
-  m_LocalScale: {x: 18.4699993, y: 19.5900002, z: 5.87980318}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483980}
   m_Father: {fileID: 494336}
@@ -100,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 155080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.163000003, y: 0, z: 0}
-  m_LocalScale: {x: .629999995, y: .170073718, z: .170073718}
+  m_LocalScale: {x: 9.44999981, y: 4.5999999, z: .170073718}
   m_Children: []
   m_Father: {fileID: 472224}
   m_RootOrder: 0
@@ -173,6 +174,7 @@ MonoBehaviour:
   hopTime: .300000012
   hopLatency: .100000001
   range: 277.5
+  stunTime: .800000012
   particlePrefab: {fileID: 176238, guid: 46c5dafddf4544e25a4c6d2b2e48596f, type: 2}
 --- !u!114 &11449034
 MonoBehaviour:
@@ -187,6 +189,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   hitDamage: 3
+--- !u!114 &11462550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0a05053717d47229f431434377cb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesPrefab: {fileID: 114028, guid: fe83a385a6b2e4bb9b9d4668748d9017, type: 2}
 --- !u!212 &21231048
 SpriteRenderer:
   m_ObjectHideFlags: 1

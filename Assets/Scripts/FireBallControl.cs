@@ -14,6 +14,13 @@ public class FireBallControl : MonoBehaviour {
 	public GameObject normalFireBall;
 	public GameObject fullyChargedFireBall;
 
+	public AudioSource fireSoundSource;
+	public AudioSource chargeSoundSource;
+	public AudioLowPassFilter chargeLowPass;
+	public float startFrequency = 400f;
+	public float finishFrequency = 5000f;
+
+
 	FireProjectile _projectileLauncher;
 
 	bool held = false;
@@ -34,13 +41,22 @@ public class FireBallControl : MonoBehaviour {
 		if (Input.GetButtonUp (buttonName))
 		{
 			Release(heldTime);
+			fireSoundSource.Play();
 			held = false;
 			heldTime = 0.0f;
 		}
 
 		if (held)
 		{
+			chargeSoundSource.enabled = true;
+
 			heldTime += Time.deltaTime;
+			float percentageCharged = Mathf.Clamp (heldTime / fullChargeTime, 0f, 1f);
+			chargeLowPass.cutoffFrequency = startFrequency + percentageCharged * (finishFrequency - startFrequency);
+		} 
+		else
+		{
+			chargeSoundSource.enabled = false;
 		}
 
 	}

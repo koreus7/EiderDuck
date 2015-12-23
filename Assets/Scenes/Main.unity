@@ -13217,27 +13217,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494336, guid: d868d66940a814a679a6aae9605ff517, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 472224, guid: d868d66940a814a679a6aae9605ff517, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 472224, guid: d868d66940a814a679a6aae9605ff517, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 472224, guid: d868d66940a814a679a6aae9605ff517, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 483980, guid: d868d66940a814a679a6aae9605ff517, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 9.44999981
-      objectReference: {fileID: 0}
-    - target: {fileID: 483980, guid: d868d66940a814a679a6aae9605ff517, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4.5999999
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d868d66940a814a679a6aae9605ff517, type: 2}
@@ -13922,22 +13902,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1d0c184845252df44a655359de388cb8, type: 3}
   m_Color: {r: .312608123, g: .720588207, b: .31542176, a: 1}
---- !u!1 &1133786099 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 186130, guid: d868d66940a814a679a6aae9605ff517, type: 2}
-  m_PrefabInternal: {fileID: 1079437898}
---- !u!114 &1133786105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133786099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c0a05053717d47229f431434377cb0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particlesPrefab: {fileID: 114028, guid: fe83a385a6b2e4bb9b9d4668748d9017, type: 2}
 --- !u!1 &1133933417
 GameObject:
   m_ObjectHideFlags: 0
@@ -21188,18 +21152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 19821510, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11444856, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}
-      propertyPath: normalFireBall
-      value: 
-      objectReference: {fileID: 121404, guid: b4f693e7076be4a0ea0a4e580663225d, type: 2}
-    - target: {fileID: 11444856, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}
-      propertyPath: fullyChargedFireBall
-      value: 
-      objectReference: {fileID: 146766, guid: dace7e182c7ea4a298b3bfbf0a9c59de, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}
   m_IsPrefabParent: 0

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KillEnemy : MonoBehaviour {
+public class KillEnemy : MonoBehaviour 
+{
 
 	public float minimumVelocity = 200.0f;
 
@@ -10,6 +11,9 @@ public class KillEnemy : MonoBehaviour {
 
 	private Rigidbody2D _rigidBody;
 	private SpriteRenderer _renderer;
+	public float knockBackAmount = 1.0f;
+
+
 
 	// Use this for initialization
 	void Start () 
@@ -48,6 +52,7 @@ public class KillEnemy : MonoBehaviour {
 		if (_velocity.magnitude > minimumVelocity) 
 		{
 			other.SendMessage ("Hit", SendMessageOptions.DontRequireReceiver);
+			other.SendMessage ("KnockBack", new KnockBackArgs(transform.position,knockBackAmount), SendMessageOptions.DontRequireReceiver);
 		}
 
 	}

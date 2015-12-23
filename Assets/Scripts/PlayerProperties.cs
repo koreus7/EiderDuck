@@ -80,7 +80,6 @@ public class PlayerProperties : MonoBehaviour {
 
 	public void TakeDamage(float amount)
 	{
-		Debug.Log ("Take " + amount + " damage");
 		_health -= amount;
 	}
 
