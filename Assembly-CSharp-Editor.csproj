@@ -131,6 +131,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
+     <None Include="Assets\Plugins\DOTween\readme.txt" />
      <None Include="Assets\Plugins\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
@@ -139,6 +140,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\Fallback.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Plugins\DOTween\DOTween46.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
@@ -151,6 +153,7 @@
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Plugins\DOTween\DOTween50.xml" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\ReflectiveBackgroundPlanar.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
@@ -210,6 +213,7 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\Plugins\DOTween\DOTween43.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
@@ -238,6 +242,24 @@
  <Reference Include="pseudoSinCos">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/2DLightAssets/Scripts/Helpers/pseudoSinCos.dll</HintPath>
  </Reference>
+ <Reference Include="NSubstitute">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil.Mdb">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.core">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.core.interfaces">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -265,23 +287,20 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
+ <Reference Include="DOTweenEditor">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
- <Reference Include="NSubstitute">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
+ <Reference Include="DOTween">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Cecil.Mdb">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween43.dll</HintPath>
  </Reference>
- <Reference Include="nunit.core">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween46.dll</HintPath>
  </Reference>
- <Reference Include="nunit.core.interfaces">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
