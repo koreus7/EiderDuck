@@ -1,13 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SeekerAI : MonoBehaviour {
+
+/// <summary>
+/// Seeker AI
+/// 
+/// Moves towoards the target.
+/// </summary>
+public class SeekerAI : MonoBehaviour 
+{
 
 	public string targetName = "Player";
 	private Transform _target;
 	Rigidbody2D _rigidBody;
 	public float speed = 2.0f;
+
+	//How much we repel other enemies.
 	public float repelance = 1.0f;
+
+	//How close we get before we stop adding force.
 	public float standOffDistance = 0.0f;
 
 	// Use this for initialization
@@ -21,15 +32,17 @@ public class SeekerAI : MonoBehaviour {
 	void FixedUpdate () 
 	{
 
-		//If we started before the player.
+		//If players Start was called before our Start.
 		if (_target == null) 
 		{
 			_target = GameObject.Find (targetName).transform;
 		}
 
+		//Line from us to the target
 		Vector3 joiningLine = _target.transform.position - transform.position;
 		Vector2 joiningLine2D = new Vector2 (joiningLine.x, joiningLine.y);
 
+		//Force in the direction of the joining line.
 		Vector2 forceVector = joiningLine2D.normalized * speed * (PlayerProperties.Inst.DificultyLevel + 1);
 
 
@@ -42,8 +55,10 @@ public class SeekerAI : MonoBehaviour {
 	public void NearEnemy(object enemy)
 	{
 		var enemyTransform = ((GameObject)enemy).transform;
-		var distance = enemyTransform.position - transform.position;
+		Vector3 distance = enemyTransform.position - transform.position;
 		distance.Normalize ();
+
+		//Repel self from enemy.
 		_rigidBody.AddForce (-distance*repelance); 
 	}
 	

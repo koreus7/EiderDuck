@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SlowParticlesInterface : MonoBehaviour {
+/// <summary>
+/// Slow particles interface.
+/// 
+/// So the particles game object can start and stop when the StartEfect and
+/// StopEffect messages are broadcast
+/// </summary>
+public class SlowParticlesInterface : MonoBehaviour 
+{
 
 	ParticleSystem _particleSystem;
 

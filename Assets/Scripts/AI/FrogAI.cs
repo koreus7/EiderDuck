@@ -1,17 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// FrogAI
+/// 
+/// Jumps to the player one hop at a time.
+/// </summary>
 public class FrogAI : MonoBehaviour 
 {
 	
 	public string targetName = "Player";
-	
+
+
+	//How often we hop.
 	public float hopPeriod = 1.5f;
-	
+
+
+	//How long it takes for one hop.
 	public float hopTime = 1.0f;
-	
+
+
+	//How long between looking where the player is and hopping.
 	public float hopLatency = 0.1f;
-	
+
+	//Range for one hop.
 	public float range = 20.0f;
 
 	public float stunTime = 0.5f;
@@ -68,15 +80,18 @@ public class FrogAI : MonoBehaviour
 			StoreTargetPosition();
 		}
 		
-		
+
+		//Timer finished so start hopping.
 		if (_elapsedSinceHop > hopPeriod )
 		{
 			StartHop();
 		}
-		
+
+		//If we are hopping this frame.
 		if (_hopping)
 		{
-			
+
+			//If the hop is finished
 			if(_elapsedSinceHop > hopTime)
 			{
 				EndHop();
@@ -86,7 +101,8 @@ public class FrogAI : MonoBehaviour
 				CalculateHopPosition();
 			}
 		}
-		
+
+		//Only when we hit the ground do we want to collide.
 		_boxCollider.isTrigger = _hopping;
 	}
 
@@ -94,17 +110,20 @@ public class FrogAI : MonoBehaviour
 	
 	void CalculateHopPosition()
 	{
+		//Line from beggining to end of hop.
 		Vector3 hopLine = hopTarget - positionBeforeHop;
-		
+
 		float hopLineMagnitude = hopLine.magnitude;
 		Vector3 hoplineDirection = hopLine.normalized;
 		
 		float percentageHopDone = _elapsedSinceHop / hopTime;
-		
+
+		//Where on the hopline are we based on how long into the hop we are.
 		Vector3 newPosition = positionBeforeHop + hoplineDirection * hopLineMagnitude * percentageHopDone;
 
 
-		//scale is is the parabolic curve -x(x -1) + 1
+		//Frog is bigger when it hops higher due to perspective.
+		//Scale is is the parabolic curve -x(x -1) + 1
 		//       . .
 		//     .     .
 		//    .       .
@@ -118,26 +137,29 @@ public class FrogAI : MonoBehaviour
 		transform.position = newPosition;
 		
 	}
-	
+
+
 	void StoreTargetPosition()
 	{
+		//Line from us to the target.
 		Vector3 joiningLine = transform.position - _target.transform.position;
-		
+
+
 		if (joiningLine.magnitude < range)
 		{
+			//If we can get ther in one hop then do it.
 			hopTarget = _target.transform.position;
 		}
 		else if (joiningLine.magnitude < range*3.0f)
 		{
-			//Move in the direction of the target at maximum range.
+			//We can get there in less than 3 hops so
+			//Move in the direction of the target at maximum hop distance.
 			hopTarget = (_target.transform.position - transform.position).normalized * range;
 		}
-		//If it will take more than three hops then just hop around instead.
 		else
 		{
-		
+			//If it will take more than three hops then just hop around aimlessley instead.
 			Vector3 direction = new Vector3 (Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f));
-			//hop around aimlessly
 			hopTarget = direction * Random.Range (0.3f, range);
 		}
 
@@ -153,17 +175,22 @@ public class FrogAI : MonoBehaviour
 
 	void EndHop()
 	{
+		//Pound the ground when we land.
 		_explodeScript.MakeExplosionForce(1.0f);
 		_hopping = false;
 		_elapsedSinceHop = 0.0f;
 	}
 
+
+	//Debug
 	void OnDrawGizmos()
 	{
 		Gizmos.DrawLine (transform.position, hopTarget);
 		Gizmos.DrawWireSphere (transform.position, range);
 	}
 
+
+	//Slow the player on collide.
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.name == "Player")
@@ -174,6 +201,7 @@ public class FrogAI : MonoBehaviour
 
 	}
 
+	//Recieve knockback.
 	public void  KnockBack( KnockBackArgs args)
 	{
 		//Hop away

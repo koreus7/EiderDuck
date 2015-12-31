@@ -1,7 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterMovement : MonoBehaviour {
+/// <summary>
+/// Character movement.
+/// 
+/// Controls the characters movement from user input.
+/// </summary>
+public class CharacterMovement : MonoBehaviour 
+{
 	
 	Rigidbody2D _rigidBody;
 	
@@ -40,12 +46,11 @@ public class CharacterMovement : MonoBehaviour {
 	{
 		_rigidBody = GetComponent<Rigidbody2D> ();
 	}
-	
-	
-	void Update()
-	{
-	}
-	
+
+
+	/// <summary>
+	/// Slow down the player due to mud, slime or whatever the case may be.
+	/// </summary>
 	void Slow()
 	{
 		currentlySlowed = true;
@@ -60,9 +65,20 @@ public class CharacterMovement : MonoBehaviour {
 		
 		
 		Vector2 force = _inputAxes * speed;
-		
-		
-		
+
+		UpdateSlowState ();
+
+		if (currentlySlowed)
+		{
+			force *= slowPercentage;
+		}
+
+		_rigidBody.AddForce (force);
+	}
+	
+	void UpdateSlowState()
+	{
+		//When the slow effect is finished.
 		if (slowTimeElapsed > slowTime)
 		{
 			currentlySlowed = false;
@@ -70,17 +86,7 @@ public class CharacterMovement : MonoBehaviour {
 		} 
 		
 		slowTimeElapsed += Time.deltaTime;
-		
-		
-		if (currentlySlowed)
-		{
-			force *= slowPercentage;
-		}
-		
-		_rigidBody.AddForce (force);
 	}
-	
-	
 	
 	public void StartSwimming()
 	{

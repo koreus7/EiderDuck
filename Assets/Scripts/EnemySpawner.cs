@@ -1,26 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySpawner : MonoBehaviour {
 
+/// <summary>
+/// Enemy spawner.
+/// 
+/// Instantiates enemy prefabs at a time interval when the player
+/// is in range.
+/// </summary>
+public class EnemySpawner : MonoBehaviour 
+{
+	//How often to spawn
 	public float spawnPeriod = 5.0f;
 
-	private float _spawnPeriodCounter = 0.0f;
-
+	//How close the player has to be to start spawning.
 	public float activationRadius = 20.0f;	
 
+	//How many to spawn each time.
 	public int waveSize = 10;
-
+	
+	//The prefab to instantiate.
 	public GameObject enemyPrefab;
-	
 
-	// Use this for initialization
-	void Start () {
+
+	private float _spawnPeriodCounter = 0.0f;
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
 		if (_spawnPeriodCounter < spawnPeriod) 
 		{
@@ -28,10 +34,13 @@ public class EnemySpawner : MonoBehaviour {
 		} 
 		else 
 		{
+			//Counter has finished so reset.
 			_spawnPeriodCounter = 0;
 
 			Vector3 playerDisplacement = this.transform.position - PlayerProperties.Position;
 
+
+			//Check if player is in range.
 			if(playerDisplacement.magnitude < activationRadius)
 			{
 				SpawnWave();
@@ -51,6 +60,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void SpawnOne ()
 	{
+		//If no prefab set then use the default one.
 		if (enemyPrefab == null)
 		{
 			GameObject instance = (GameObject)Instantiate (Resources.Load ("Enemy"));
@@ -66,6 +76,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void OnDrawGizmos()
 	{
+		//Draw the spawn radius in edit mode.
 		var color = Color.red;
 		color.a = 0.4f;
 		Gizmos.color = color;

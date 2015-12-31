@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Knock back arguments.
+/// 
+/// Used to transfer data about the knockback to the reciever.
+/// </summary>
 public class KnockBackArgs
 {
 	public Vector2 center    { get; private set; }

@@ -1,7 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireBallControl : MonoBehaviour {
+
+/// <summary>
+/// Fire ball control.
+/// 
+/// Gets the user input and uses it to control the fireball firing.
+/// 
+/// Fireballs can be held and charged.
+/// Also provides audio feedback on how charged the fireball is.
+/// 
+/// </summary>
+public class FireBallControl : MonoBehaviour
+{
 
 	float heldTime = 0.0f;
 
@@ -16,10 +27,12 @@ public class FireBallControl : MonoBehaviour {
 
 	public AudioSource fireSoundSource;
 	public AudioSource chargeSoundSource;
+
+	//Low pass the charging sound to make the sound change
+	//as we charge the weapon.
 	public AudioLowPassFilter chargeLowPass;
 	public float startFrequency = 400f;
 	public float finishFrequency = 5000f;
-
 
 	FireProjectile _projectileLauncher;
 
@@ -40,6 +53,8 @@ public class FireBallControl : MonoBehaviour {
 		}
 		if (Input.GetButtonUp (buttonName))
 		{
+
+			//Fire a fireball.
 			Release(heldTime);
 			fireSoundSource.Play();
 			held = false;
@@ -52,6 +67,8 @@ public class FireBallControl : MonoBehaviour {
 
 			heldTime += Time.deltaTime;
 			float percentageCharged = Mathf.Clamp (heldTime / fullChargeTime, 0f, 1f);
+
+			//Low pass goes from start to finish frequency based on percentage charged.
 			chargeLowPass.cutoffFrequency = startFrequency + percentageCharged * (finishFrequency - startFrequency);
 		} 
 		else
@@ -61,12 +78,16 @@ public class FireBallControl : MonoBehaviour {
 
 	}
 
-	void Release(float length)
+
+
+	void Release(float heldTime)
 	{
-		float percentCharge = length / fullChargeTime;
+		float percentCharge = heldTime / fullChargeTime;
+
 
 		if (percentCharge >= 1.0f)
 		{
+			//Fully charged so use special prefab.
 			_projectileLauncher.projectilePrefab = fullyChargedFireBall;
 		} 
 		else
@@ -74,13 +95,8 @@ public class FireBallControl : MonoBehaviour {
 			_projectileLauncher.projectilePrefab = normalFireBall;
 		}
 
+		//Clamp strength to max charge strength.
 		float strength = Mathf.Clamp (percentCharge * fullChargeStrength, 1, fullChargeStrength);
-
-		//Spamming the button
-		if (length < 0.15f)
-		{
-			strength = 0.5f;
-		}
 
 
 		_projectileLauncher.Fire (strength);

@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// KillEnemy.
+/// 
+/// Send a hit and knockback message to the enemy when we collide with them.
+/// </summary>
 public class KillEnemy : MonoBehaviour 
 {
-
+	//Do we need to be going fast to kill them?
 	public float minimumVelocity = 200.0f;
 
 	private Vector3 _lastPosition;
@@ -14,33 +20,19 @@ public class KillEnemy : MonoBehaviour
 	public float knockBackAmount = 1.0f;
 
 
-
-	// Use this for initialization
+	
 	void Start () 
 	{
 		_rigidBody = GetComponent<Rigidbody2D> ();
 		_lastPosition = transform.position;
 		_renderer = GetComponent<SpriteRenderer> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
+
+		//Instantaneous velocity.
 		_velocity = (transform.position - _lastPosition) / Time.deltaTime;
-
-		var color = _renderer.color;
-
-		var percentageVelocity = _velocity.magnitude/minimumVelocity;
-		percentageVelocity *= percentageVelocity;
-
-		if (percentageVelocity < 0.5f) 
-		{
-			percentageVelocity = 0.1f;
-		}
-
-		color.a = Mathf.Lerp (color.a, Mathf.Clamp (percentageVelocity, 0f, 1f), Time.deltaTime*7.0f);
-
-		_renderer.color = color;
 
 		_lastPosition = transform.position;
 	}

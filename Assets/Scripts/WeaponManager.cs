@@ -2,6 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Weapon manager.
+/// 
+/// Used to control which weapon object is active. 
+/// 
+/// It will also save and retrieve the selected weapon on scene switch.
+/// 
+/// </summary>
 public class WeaponManager : MonoBehaviour {
 		
 	public GameObject[] weapons;
@@ -14,7 +22,7 @@ public class WeaponManager : MonoBehaviour {
 
 	void Awake()
 	{
-		//See if we saved our selected weapon
+		//See if we saved our selected weapon from the last scene.
 		if (PlayerPrefs.HasKey ("SelectedWeapon"))
 		{
 			_selectedWeaponName = PlayerPrefs.GetString("SelectedWeapon");
