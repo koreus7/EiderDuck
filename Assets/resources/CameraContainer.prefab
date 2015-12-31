@@ -29,6 +29,8 @@ GameObject:
   - 124: {fileID: 12437876}
   - 81: {fileID: 8111098}
   - 114: {fileID: 11418534}
+  - 114: {fileID: 11473982}
+  - 114: {fileID: 11433780}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -121,6 +123,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &11433780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478a2083ad114a07d000fbfb8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: e9ba2083ad114a07d000fbfb8d76c639, type: 3}
+  blurAmount: .230000004
+  extraBlur: 0
 --- !u!114 &11454140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +148,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e100fd234d93425baafadf5846b27ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11473982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  intensity: .200000003
+  chromaticAberration: .730000019
+  axialAberration: .5
+  blur: .25
+  blurSpread: .689999998
+  luminanceDependency: .25
+  blurDistance: 2.5
+  vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
+  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
+  chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
+    type: 3}
 --- !u!124 &12437876
 Behaviour:
   m_ObjectHideFlags: 1

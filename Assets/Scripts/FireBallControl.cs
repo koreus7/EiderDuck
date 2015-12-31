@@ -67,7 +67,6 @@ public class FireBallControl : MonoBehaviour {
 
 		if (percentCharge >= 1.0f)
 		{
-			Debug.Log("Fully Charged");
 			_projectileLauncher.projectilePrefab = fullyChargedFireBall;
 		} 
 		else
