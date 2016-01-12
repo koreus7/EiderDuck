@@ -35,7 +35,12 @@ public class CharacterMovement : MonoBehaviour
 	
 	float slowTimeElapsed = 0.0f;
 	bool currentlySlowed;
-	
+
+	public bool canMove;
+	// tracks if the player can or can't move
+	// (based on the activation of the dialogue
+	// system)
+
 	void Start () 
 	{
 		_inputAxes = new Vector2 ();
@@ -60,6 +65,15 @@ public class CharacterMovement : MonoBehaviour
 	
 	void FixedUpdate()
 	{
+
+		if (!canMove)
+		{
+			// prevents the rest of the code from
+			// executing if the player shouldn't move
+			// at the moment
+			return;
+		}
+
 		_inputAxes.x = Input.GetAxis ("Horizontal");
 		_inputAxes.y = Input.GetAxis ("Vertical"); 
 		
