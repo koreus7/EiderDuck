@@ -34,6 +34,11 @@ public class Menu : MonoBehaviour {
 
 	}
 
+	void Awake()
+	{
+		volumeSlider.value = AudioListener.volume;
+	}
+
 
 	// Update is called once per frame
 	void LateUpdate () {
@@ -102,10 +107,10 @@ public class Menu : MonoBehaviour {
 		settingsPanel.SetActive (false);
 		settingsOpen = false;
 	}
+
+
 	public void volumeChanged(){
-		foreach (AudioSource audios in GameObject.FindObjectsOfType<AudioSource>()) {
-			audios.volume = volumeSlider.value;
-		}
+		AudioListener.volume = volumeSlider.value;
 	}
 
 	public void DiffucultyChanged()

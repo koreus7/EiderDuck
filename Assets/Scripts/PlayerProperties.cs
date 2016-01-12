@@ -32,6 +32,8 @@ public class PlayerProperties : MonoBehaviour {
 	private AudioSource _audioSource;
 	private float _health = 0;
 
+	public int Score = 0;
+
 
 
 	public PlayerProperties()
