@@ -75,7 +75,8 @@ public class CharacterMovement : MonoBehaviour
 
 		_rigidBody.AddForce (force);
 	}
-	
+
+	//Keep track of the slow timer and state.
 	void UpdateSlowState()
 	{
 		//When the slow effect is finished.
@@ -87,7 +88,8 @@ public class CharacterMovement : MonoBehaviour
 		
 		slowTimeElapsed += Time.deltaTime;
 	}
-	
+
+
 	public void StartSwimming()
 	{
 		_rigidBody.mass = swimmingMass;

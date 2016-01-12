@@ -83,6 +83,11 @@ public class PlayerProperties : MonoBehaviour {
 		_health -= amount;
 	}
 
+	public void IncreaseHealth(float amount)
+	{
+		_health += amount;
+	}
+
 	void SaveProperties()
 	{
 		PlayerPrefs.SetFloat ("health"		,_health);

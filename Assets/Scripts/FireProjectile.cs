@@ -24,17 +24,17 @@ public class FireProjectile : MonoBehaviour {
 
 	public void Fire(float modifierValue = 1.0f)
 	{
-		Vector3 target;
+		Vector3 finalTarget;
 		if (mouseAim)
 		{
-			target = Camera.main.ScreenToWorldPoint( Input.mousePosition );
+			finalTarget = Camera.main.ScreenToWorldPoint( Input.mousePosition );
 		} 
 		else
 		{
-			target = this.target.position;
+			finalTarget = this.target.position;
 		}
 		 
-		Vector3 direction3D =  this.transform.position - target; 
+		Vector3 direction3D =  this.transform.position - finalTarget; 
 		Vector2 direction = new Vector2 (direction3D.x, direction3D.y);
 
 		direction.Normalize();

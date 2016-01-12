@@ -13,9 +13,13 @@ using System.Collections.Generic;
 public class WeaponManager : MonoBehaviour {
 		
 	public GameObject[] weapons;
-	
+
+	/// <summary>
+	/// The name of the _selected weapon for savinge between scenes.
+	/// </summary>
 	string _selectedWeaponName = "Sword";
-	
+
+	//Dependent on name.
 	int _selectedWeaponIndex = 0;
 
 
@@ -31,6 +35,7 @@ public class WeaponManager : MonoBehaviour {
 		//Now the name is set we need to enable the weapon with that name.
 		RefreshActiveWeapons ();
 	}
+
 
 	void RefreshActiveWeapons()
 	{

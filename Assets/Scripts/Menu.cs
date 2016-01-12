@@ -76,9 +76,11 @@ public class Menu : MonoBehaviour {
 	}
 	public void closeBackpack(){
 		backpackPanel.SetActive (false);
+		foodPanel.SetActive (false);
 		backpackOpen = false;
-
 	}
+	
+
 	public void openSettings() {
 		settingsPanel.SetActive (true);
 		settingsOpen = true;

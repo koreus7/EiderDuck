@@ -233,6 +233,21 @@
  <Reference Include="pseudoSinCos">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/2DLightAssets/Scripts/Helpers/pseudoSinCos.dll</HintPath>
  </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenEditor">
+ <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
  <Reference Include="NSubstitute">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
  </Reference>
@@ -277,21 +292,6 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/Editor/DOTweenEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTween43">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween43.dll</HintPath>
- </Reference>
- <Reference Include="DOTween46">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween46.dll</HintPath>
- </Reference>
- <Reference Include="DOTween50">
- <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

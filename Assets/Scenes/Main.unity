@@ -1562,6 +1562,10 @@ Prefab:
       propertyPath: food
       value: 
       objectReference: {fileID: 2066248252}
+    - target: {fileID: 11411348, guid: 2bf5c297f66f9eb47a408fdeff7d7f18, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseFood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bf5c297f66f9eb47a408fdeff7d7f18, type: 2}
   m_IsPrefabParent: 0
@@ -2359,6 +2363,18 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 757501042}
+    - target: {fileID: 11473982, guid: 619b8520c77c2403e97d2df870bb1ba0, type: 2}
+      propertyPath: intensity
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473982, guid: 619b8520c77c2403e97d2df870bb1ba0, type: 2}
+      propertyPath: blur
+      value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473982, guid: 619b8520c77c2403e97d2df870bb1ba0, type: 2}
+      propertyPath: blurSpread
+      value: .529999971
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 619b8520c77c2403e97d2df870bb1ba0, type: 2}
   m_IsPrefabParent: 0
@@ -11136,6 +11152,48 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1d0c184845252df44a655359de388cb8, type: 3}
   m_Color: {r: .312608123, g: .720588207, b: .31542176, a: 1}
+--- !u!1001 &880257644
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -96.6999969
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 72.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498418, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 275e3b41a99884007a3b6c8abbd52aa8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &881552422
 GameObject:
   m_ObjectHideFlags: 0
@@ -14636,6 +14694,10 @@ Prefab:
     - target: {fileID: 117916, guid: 9cb50e2fc7c7943978878c7de338b8db, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423802, guid: 9cb50e2fc7c7943978878c7de338b8db, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cb50e2fc7c7943978878c7de338b8db, type: 2}
@@ -21191,6 +21253,10 @@ Prefab:
     - target: {fileID: 454518, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}
       propertyPath: m_LocalRotation.w
       value: -.385745257
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131578, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}
+      propertyPath: m_Size.x
+      value: 1.32000005
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11405592, guid: 80cd1696c3c974d2181f2c5c2f0c37f5, type: 2}

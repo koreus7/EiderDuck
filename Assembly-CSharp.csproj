@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FoodPickup.cs" />
      <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
      <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />
      <Compile Include="Assets\Scripts\AI\FrogAI.cs" />

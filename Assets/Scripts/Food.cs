@@ -41,7 +41,7 @@ public class Food : MonoBehaviour {
 		currentFoods.Add (new food ("Bread", 4, 10, 5, breadImg));
 	}
 
-	public void obtainFood(string name, int amount) {
+	public void ObtainFood(string name, int amount) {
 		foreach (food f in currentFoods) {
 			if(f.name == name) {
 				f.amount += amount;
@@ -54,7 +54,7 @@ public class Food : MonoBehaviour {
 			if(f.name == name) {
 				if(f.amount > 0) {
 					f.amount -= 1;
-					//eating food stuff goes in here, for changing the player health etc
+					PlayerProperties.Inst.IncreaseHealth(f.healAmount);
 				}
 			}
 		}
