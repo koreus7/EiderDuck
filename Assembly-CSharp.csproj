@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Food.cs" />
      <Compile Include="Assets\Scripts\HideCursorOnEnable.cs" />
      <Compile Include="Assets\Scripts\IHealthManager.cs" />
+     <Compile Include="Assets\Scripts\IncreasePlayerScoreOnDestroy.cs" />
      <Compile Include="Assets\Scripts\KillEnemy.cs" />
      <Compile Include="Assets\Scripts\KnockbackArgs.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />

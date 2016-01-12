@@ -6,7 +6,7 @@ public class PlayerSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		GameObject player = (GameObject)Instantiate (Resources.Load ("Player"));
+		GameObject player = (GameObject)Instantiate (Resources.Load ("Player"),this.transform.position,this.transform.rotation);
 		player.name = "Player";
 
 		GameObject camera = (GameObject)Instantiate (Resources.Load ("CameraContainer"));
@@ -15,8 +15,6 @@ public class PlayerSpawn : MonoBehaviour {
 		Instantiate (Resources.Load ("UI"));
 
 		Instantiate (Resources.Load ("EventSystem"));
-
-		player.transform.position = this.transform.position;
 	}
 	
 	// Update is called once per frame
