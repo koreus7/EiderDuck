@@ -8,10 +8,16 @@ public class Menu : MonoBehaviour {
 	public GameObject menuPanel;
 	public GameObject backpackPanel;
 	public GameObject settingsPanel;
+	public GameObject foodPanel;
+	public GameObject weaponPanel;
+	public GameObject powerupSpriteHolder;
+	public GameObject menuButton;
 	public Slider volumeSlider;
 	bool menuOpen = false;
 	bool backpackOpen = false;
 	bool settingsOpen = false;
+	bool foodOpen = false;
+	bool weaponOpen = false;
 
 	//Food
 	public Food food;
@@ -20,12 +26,25 @@ public class Menu : MonoBehaviour {
 	public Text healthText;
 	public Text amountText;
 	public Image foodImage;
+
+	//weapons
+	public Weapons weapons;
+	public Text weaponNameText;
+	public Text weaponDamageText;
+	public Text weaponAvailableText;
+	public Image weaponImage;
+
+	//powerups
+	public Powerups powerups;
 	
 	int currentFoodIndex = 0;
+	int currentWeaponIndex = 0;
 
 	// Use this for initialization
 	void Start () {
 		updateFoodUI ();
+		updateWeaponUI ();
+		updatePowerupGUI ();
 	}
 	
 	// Update is called once per frame
@@ -39,15 +58,25 @@ public class Menu : MonoBehaviour {
 		}
 	}
 
+	public void openMenuButton () {
+		if (menuOpen == false) {
+			openMenuPanel ();
+		} else {
+			closeMenuPanel();
+		}
+	}
+
 	public void openMenuPanel() {
 		menuPanel.SetActive (true);
 		menuOpen = true;
+		menuButton.SetActive (false);
 		Time.timeScale = 0.00001f;
 
 	}
 	public void closeMenuPanel() {
 		menuPanel.SetActive (false);
 		menuOpen = false;
+		menuButton.SetActive (true);
 		closeBackpack ();
 		closeSettings ();
 		Time.timeScale = 1;
@@ -67,6 +96,8 @@ public class Menu : MonoBehaviour {
 		settingsPanel.SetActive (true);
 		settingsOpen = true;
 		closeBackpack ();
+		closeWeapons ();
+		closeFood ();
 	}
 	public void closeSettings(){
 		settingsPanel.SetActive (false);
@@ -79,6 +110,18 @@ public class Menu : MonoBehaviour {
 	}
 	public void exitGame () {
 		Application.Quit ();
+	}
+
+	public void openFood(){
+		foodPanel.SetActive (true);
+		foodOpen = true;
+		closeSettings ();
+		closeWeapons ();
+	}
+	public void closeFood(){
+		foodPanel.SetActive (false);
+		foodOpen = false;
+
 	}
 	public void nextFood() {
 		currentFoodIndex += 1;
@@ -108,5 +151,51 @@ public class Menu : MonoBehaviour {
 		updateFoodUI ();
 	}
 
+	
+	public void openWeapons(){
+		weaponPanel.SetActive (true);
+		weaponOpen = true;
+		closeSettings ();
+		closeFood ();
+	}
+	public void closeWeapons(){
+		weaponPanel.SetActive (false);
+		weaponOpen = false;
+		
+	}
+	public void nextWeapon() {
+		currentWeaponIndex += 1;
+		if (currentWeaponIndex > weapons.currentWeapons.Count -1) {
+			currentWeaponIndex = weapons.currentWeapons.Count-1;
+		}
+		updateWeaponUI ();
+	}
+	public void prevWeapon() {
+		currentWeaponIndex -= 1;
+		if (currentWeaponIndex < 0) {
+			currentWeaponIndex = 0;
+		}
+		updateWeaponUI ();
+	}
+
+	public void equipWeapon () {
+		weapons.Equip (weapons.currentWeapons [currentWeaponIndex].name);
+	}
+
+	void updateWeaponUI() {
+		weaponNameText.text = weapons.currentWeapons [currentWeaponIndex].name;
+		weaponDamageText.text = "Damage: " + weapons.currentWeapons [currentWeaponIndex].damage.ToString ();
+		weaponAvailableText.text = "Available: " + weapons.currentWeapons [currentWeaponIndex].available.ToString ();
+		weaponImage.sprite = weapons.currentWeapons [currentWeaponIndex].img;
+	}
+
+	void updatePowerupGUI () {
+		int count = 0;
+		foreach (Image i in powerupSpriteHolder.GetComponentsInChildren<Image>()) {
+			i.sprite = powerups.currentPowerups[count].img;
+			i.gameObject.GetComponent<powerupinfo>().hoverText = powerups.currentPowerups[count].description;
+			count ++;
+		}
+	}	
 }
 	
