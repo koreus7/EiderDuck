@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/KillEnemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/SeekerAI.cs">
     <Files>
       <File FileName="Assets/Scripts/SwordSlashController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MouseRotate.cs" Line="1" Column="1" />
@@ -10,11 +10,13 @@
       <File FileName="Assets/Scripts/ParticlesOnDie.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Menu.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerSpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/SeekerAI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AI/SeekerAI.cs" Line="41" Column="1" />
       <File FileName="Assets/Scripts/Food.cs" Line="1" Column="1" />
       <File FileName="Assets/FoodPickup.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerProperties.cs" Line="48" Column="27" />
-      <File FileName="Assets/Scripts/KillEnemy.cs" Line="30" Column="2" />
+      <File FileName="Assets/Scripts/PlayerProperties.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/KillEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/IncreasePlayerScoreOnDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Effects/ImageEffects/Scripts/ImageEffectBase.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

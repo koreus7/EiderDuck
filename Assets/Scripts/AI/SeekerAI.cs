@@ -31,21 +31,37 @@ public class SeekerAI : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
+		bool targetExists = true;
 
 		//If players Start was called before our Start.
 		if (_target == null) 
 		{
-			_target = GameObject.Find (targetName).transform;
+			GameObject targetGameObject = GameObject.Find (targetName);
+			
+
+			if(targetGameObject == null)
+			{
+				_target.transform.position = targetGameObject.transform.position;
+				targetExists = false;
+			}
 		}
 
+		if (targetExists)
+		{
+			MoveToTarget ();
+		}
+	}
+
+	void MoveToTarget()
+	{
 		//Line from us to the target
 		Vector3 joiningLine = _target.transform.position - transform.position;
 		Vector2 joiningLine2D = new Vector2 (joiningLine.x, joiningLine.y);
-
+		
 		//Force in the direction of the joining line.
 		Vector2 forceVector = joiningLine2D.normalized * speed * (PlayerProperties.Inst.DificultyLevel + 1);
-
-
+		
+		
 		if (joiningLine.magnitude > standOffDistance)
 		{
 			_rigidBody.AddForce (forceVector);
