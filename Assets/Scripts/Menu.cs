@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour {
 	public GameObject settingsPanel;
 	public GameObject foodPanel;
 	public GameObject weaponPanel;
+	public GameObject powerupPanel;
 	public GameObject powerupSpriteHolder;
 	public GameObject menuButton;
 	public Slider volumeSlider;
@@ -18,6 +19,7 @@ public class Menu : MonoBehaviour {
 	bool settingsOpen = false;
 	bool foodOpen = false;
 	bool weaponOpen = false;
+	bool powerupOpen = false;
 
 	//Food
 	public Food food;
@@ -79,6 +81,9 @@ public class Menu : MonoBehaviour {
 		menuButton.SetActive (true);
 		closeBackpack ();
 		closeSettings ();
+		closeFood ();
+		closeWeapons ();
+		closePowerups ();
 		Time.timeScale = 1;
 
 	}
@@ -90,6 +95,9 @@ public class Menu : MonoBehaviour {
 	public void closeBackpack(){
 		backpackPanel.SetActive (false);
 		backpackOpen = false;
+		closeFood ();
+		closePowerups ();
+		closeWeapons ();
 
 	}
 	public void openSettings() {
@@ -98,6 +106,7 @@ public class Menu : MonoBehaviour {
 		closeBackpack ();
 		closeWeapons ();
 		closeFood ();
+		closePowerups ();
 	}
 	public void closeSettings(){
 		settingsPanel.SetActive (false);
@@ -117,6 +126,7 @@ public class Menu : MonoBehaviour {
 		foodOpen = true;
 		closeSettings ();
 		closeWeapons ();
+		closePowerups ();
 	}
 	public void closeFood(){
 		foodPanel.SetActive (false);
@@ -157,6 +167,7 @@ public class Menu : MonoBehaviour {
 		weaponOpen = true;
 		closeSettings ();
 		closeFood ();
+		closePowerups ();
 	}
 	public void closeWeapons(){
 		weaponPanel.SetActive (false);
@@ -188,12 +199,31 @@ public class Menu : MonoBehaviour {
 		weaponAvailableText.text = "Available: " + weapons.currentWeapons [currentWeaponIndex].available.ToString ();
 		weaponImage.sprite = weapons.currentWeapons [currentWeaponIndex].img;
 	}
-
+	public void openPowerups(){
+		powerupPanel.SetActive (true);
+		powerupOpen = true;
+		closeSettings ();
+		closeFood ();
+		closeWeapons ();
+		updatePowerupGUI();
+	}
+	public void closePowerups(){
+		powerupPanel.SetActive (false);
+		powerupOpen = false;
+		
+	}
 	void updatePowerupGUI () {
 		int count = 0;
 		foreach (Image i in powerupSpriteHolder.GetComponentsInChildren<Image>()) {
 			i.sprite = powerups.currentPowerups[count].img;
 			i.gameObject.GetComponent<powerupinfo>().hoverText = powerups.currentPowerups[count].description;
+			Debug.Log (powerups.currentPowerups[count].available);
+			if(powerups.currentPowerups[count].available) {
+				i.color = new Color(255,255,255,255);
+			} else {
+				Debug.Log ("Set to gray");
+				i.color = new Color(0.4f,0.4f,0.4f,0.25f);
+			}
 			count ++;
 		}
 	}	

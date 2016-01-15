@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\ComponentExtensions.cs" />
      <Compile Include="Assets\Scripts\DieOnHit.cs" />
+     <Compile Include="Assets\Scripts\DuckUI.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Food.cs" />
      <Compile Include="Assets\Scripts\KillEnemy.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\Powerups.cs" />
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
      <Compile Include="Assets\Scripts\SeekerAI.cs" />
+     <Compile Include="Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\Scripts\Weapons.cs" />
      <Compile Include="Assets\Scripts\powerupinfo.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

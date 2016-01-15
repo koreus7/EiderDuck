@@ -43,17 +43,17 @@ public class Powerups : MonoBehaviour {
 	public Sprite points3Img;
 	
 	void Awake () {
-		currentPowerups.Add (new powerup ("aaa", "Move 10% faster", run1Img, true));
-		currentPowerups.Add (new powerup ("bbb", "Move 20% faster", run2Img, true));
+		currentPowerups.Add (new powerup ("aaa", "Move 10% faster", run1Img, false));
+		currentPowerups.Add (new powerup ("bbb", "Move 20% faster", run2Img, false));
 		currentPowerups.Add (new powerup ("ccc", "Move 30% faster", run3Img, false));
-		currentPowerups.Add (new powerup ("ddd", "+10% Health", health1Img, true));
-		currentPowerups.Add (new powerup ("eee", "+20% Health", health2Img, true));
+		currentPowerups.Add (new powerup ("ddd", "+10% Health", health1Img, false));
+		currentPowerups.Add (new powerup ("eee", "+20% Health", health2Img, false));
 		currentPowerups.Add (new powerup ("fff", "+30% Health", health3Img, false));
-		currentPowerups.Add (new powerup ("ggg", "+25% Protection from Enemies", prot1Img, true));
-		currentPowerups.Add (new powerup ("hhh", "+50% Protection from Enemies", prot2Img, true));
+		currentPowerups.Add (new powerup ("ggg", "+25% Protection from Enemies", prot1Img, false));
+		currentPowerups.Add (new powerup ("hhh", "+50% Protection from Enemies", prot2Img, false));
 		currentPowerups.Add (new powerup ("iii", "Immortality", prot3Img, false));
-		currentPowerups.Add (new powerup ("jjj", "Double Point Collection", points1Img, true));
-		currentPowerups.Add (new powerup ("kkk", "Triple Point Collection", points2Img, true));
+		currentPowerups.Add (new powerup ("jjj", "Double Point Collection", points1Img, false));
+		currentPowerups.Add (new powerup ("kkk", "Triple Point Collection", points2Img, false));
 		currentPowerups.Add (new powerup ("lll", "Quadruple Point Collection", points3Img, false));
 	}
 	/*
