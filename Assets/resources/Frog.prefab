@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radiusMultiplier: 15
   damageMultiplier: 0
-  forceMultiplier: 5500
+  forceMultiplier: 5800
 --- !u!114 &11442948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +249,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 168650669
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3fc7ad23d70849dc966582a00857bc8, type: 3}
   m_Color: {r: .549578309, g: .698529422, b: .606077015, a: 1}

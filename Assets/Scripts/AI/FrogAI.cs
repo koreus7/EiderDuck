@@ -50,6 +50,11 @@ public class FrogAI : MonoBehaviour
 	void Start () 
 	{
 		_target = GameObject.Find (targetName).transform;
+
+	}
+
+	void Awake()
+	{
 		_boxCollider = gameObject.GetComponent<BoxCollider2D> ();
 		_explodeScript = gameObject.GetComponent<Explode> ();
 

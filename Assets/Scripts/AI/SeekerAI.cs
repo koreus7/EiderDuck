@@ -9,8 +9,7 @@ using System.Collections;
 /// </summary>
 public class SeekerAI : MonoBehaviour 
 {
-
-	public string targetName = "Player";
+	
 	private Transform _target;
 	Rigidbody2D _rigidBody;
 	public float speed = 2.0f;
@@ -24,32 +23,14 @@ public class SeekerAI : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		_target = GameObject.Find (targetName).transform;
+		_target = PlayerProperties.Player.transform;
 		_rigidBody = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		bool targetExists = true;
-
-		//If players Start was called before our Start.
-		if (_target == null) 
-		{
-			GameObject targetGameObject = GameObject.Find (targetName);
-			
-
-			if(targetGameObject == null)
-			{
-				_target.transform.position = targetGameObject.transform.position;
-				targetExists = false;
-			}
-		}
-
-		if (targetExists)
-		{
-			MoveToTarget ();
-		}
+		MoveToTarget ();
 	}
 
 	void MoveToTarget()

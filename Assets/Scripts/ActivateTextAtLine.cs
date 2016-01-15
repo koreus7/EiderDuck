@@ -12,12 +12,17 @@ public class ActivateTextAtLine : MonoBehaviour {
 	// once the dialogue has been initiated
 	public bool destroyWhenActivated;
 
-	public TextBoxManager theTextBox;
+	TextBoxManager textBoxManager;
 
 
 	void Start () 
 	{
-		theTextBox = FindObjectOfType<TextBoxManager> ();
+		textBoxManager = TextBoxManager.Inst;
+	}
+
+	void Awake()
+	{
+
 	}
 
 	void Update () 
@@ -30,10 +35,10 @@ public class ActivateTextAtLine : MonoBehaviour {
 		// finds the player's collider
 		if (other.name == "Player")
 		{
-			theTextBox.ReloadScript (theText);
-			theTextBox.currentLine = startLine;
-			theTextBox.endAtLine = endLine;
-			theTextBox.EnableTextBox ();
+			textBoxManager.ReloadScript (theText);
+			textBoxManager.currentLine = startLine;
+			textBoxManager.endAtLine = endLine;
+			textBoxManager.EnableTextBox ();
 
 			if (destroyWhenActivated)
 			{

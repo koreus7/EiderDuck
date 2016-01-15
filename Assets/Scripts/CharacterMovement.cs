@@ -36,10 +36,12 @@ public class CharacterMovement : MonoBehaviour
 	float slowTimeElapsed = 0.0f;
 	bool currentlySlowed;
 
-	public bool canMove;
+
 	// tracks if the player can or can't move
 	// (based on the activation of the dialogue
 	// system)
+	public bool canMove;
+
 
 	void Start () 
 	{

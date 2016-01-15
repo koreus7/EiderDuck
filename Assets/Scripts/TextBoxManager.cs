@@ -1,39 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 using UnityEngine.UI; // allows to use Text type
 
 public class TextBoxManager : MonoBehaviour {
 
 
-	public TextAsset textFile; 
+	//Singleton Class.
+	public static TextBoxManager Inst;
+
+	public TextBoxManager()
+	{
+		Inst = this;
+	}
+
 	// Holds text to display in a dialogue box
-	public string[] textlines; 
+	[HideInInspector]
+	public TextAsset textFile; 
+
+	
 	// Each line from the text file is taken 
 	// into an array as a separate entity
+	[HideInInspector]
+	public string[] textlines; 
+	
 
-	public GameObject textBox;
-	public Text theText; 
 
 	// keeps of where in the text file we are
+	[HideInInspector]
 	public int currentLine;
 
+
+
 	// allows to check if we reach the end of the text file
+	[HideInInspector]
 	public int endAtLine;
-	
+
+	[HideInInspector]
 	public bool isActive;
+	
 
 	// used to decide if we want the player's movement to halt when
 	//the dialogue is initiated
 	public bool stopPlayerMovement;
 
-	CharacterMovement playerMovement;
+
+	public GameObject textPanel;
+	public Text guiText; 
+
 
 
 
 	void Start ()
-
 	{
-		playerMovement = FindObjectOfType<CharacterMovement> ();
+		isActive = false;
 
 		// Check if the text file exists
 		if (textFile != null)
@@ -73,13 +93,12 @@ public class TextBoxManager : MonoBehaviour {
 			return;
 		}
 
-		theText.text = textlines [currentLine];
+		guiText.text = textlines [currentLine];
 
 		// if enter is pressed, move to the next part of the text
-		if (Input.GetKeyDown (KeyCode.Return))
+		if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
 		{
 			currentLine += 1;
-			Debug.Log (currentLine);
 		}
 
 		// close the text box if all lines have been traversed
@@ -91,22 +110,33 @@ public class TextBoxManager : MonoBehaviour {
 
 	public void EnableTextBox()
 	{
-		textBox.SetActive(true);
+
 		isActive = true;
+
+		textPanel.SetActive(true);
 
 		if (stopPlayerMovement)
 		{
-			playerMovement.canMove = false;
-
+			DisablePlayerMovement();
 		}
 	}
 
 	public void DisableTextBox()
 	{
-		textBox.SetActive(false);
+		textPanel.SetActive(false);
 		isActive = false;
 
-		playerMovement.canMove = true;
+		EnablePlayerMovement ();
+	}
+
+	void EnablePlayerMovement()
+	{
+		PlayerProperties.Player.GetComponent<CharacterMovement> ().canMove = true;
+	}
+
+	void DisablePlayerMovement()
+	{
+		PlayerProperties.Player.GetComponent<CharacterMovement> ().canMove = false;
 	}
 
 	public void ReloadScript(TextAsset theText)
@@ -124,3 +154,4 @@ public class TextBoxManager : MonoBehaviour {
 	}
 
 }
+

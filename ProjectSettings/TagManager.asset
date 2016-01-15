@@ -52,9 +52,15 @@ TagManager:
   - name: Foreground
     uniqueID: 568079097
     locked: 0
+  - name: Flying
+    uniqueID: 168650669
+    locked: 0
   - name: World UI Lower
     uniqueID: 715624737
     locked: 0
   - name: World UI Upper
     uniqueID: 1143681995
+    locked: 0
+  - name: Top
+    uniqueID: 2872141131
     locked: 0

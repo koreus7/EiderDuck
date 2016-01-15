@@ -1821,7 +1821,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11440990}
-        m_MethodName: closeBackpack
+        m_MethodName: CloseFood
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1903,7 +1903,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11461906}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11440990}
+        m_MethodName: OpenFood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11415180
@@ -2426,6 +2437,7 @@ MonoBehaviour:
   menuPanel: {fileID: 130380}
   backpackPanel: {fileID: 177462}
   settingsPanel: {fileID: 113650}
+  foodPanel: {fileID: 120722}
   volumeSlider: {fileID: 11404996}
   difficultySlider: {fileID: 11448004}
   food: {fileID: 0}
