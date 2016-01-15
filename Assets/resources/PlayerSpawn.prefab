@@ -4106,10 +4106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5ecc022f5af43b699ebfff2e4585ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SystemsToInstantiate:
-  - {fileID: 0}
-  - {fileID: 166676, guid: a45386628c2964ea3bf51319171f0ec8, type: 2}
-  - {fileID: 112838, guid: 2bf5c297f66f9eb47a408fdeff7d7f18, type: 2}
   cameraContainer: {fileID: 188082}
 --- !u!114 &11476212
 MonoBehaviour:
@@ -5008,8 +5004,8 @@ Canvas:
   m_GameObject: {fileID: 150958}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2022924}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
