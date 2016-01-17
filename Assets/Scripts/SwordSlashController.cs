@@ -2,6 +2,12 @@
 using System.Collections;
 using DG.Tweening;
 
+
+/// <summary>
+/// SwordSlashController
+/// 
+/// Makes the sword rotate quickly around the area the player clicks.
+/// </summary>
 public class SwordSlashController : MonoBehaviour 
 {
 
@@ -22,8 +28,8 @@ public class SwordSlashController : MonoBehaviour
 		{
 			Swing();
 		}
-
 	}
+
 
 	private void EnableSword()
 	{
@@ -47,9 +53,11 @@ public class SwordSlashController : MonoBehaviour
 		float current = transform.rotation.z;
 
 
-		float startAngle = mouseAngle - 70f;
+		float startAngle  = mouseAngle - 70f;
 		float finishAngle = mouseAngle + 70f;
 
+
+		//Switch swing direction each swing.
 		if (directionFlip)
 		{
 			float temp = startAngle;

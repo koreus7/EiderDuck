@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// SimpleHP.
+/// 
+/// Keeps track of an HP and can recieve damage.
+/// </summary>
 public class SimpleHP : MonoBehaviour, IHealthManager 
 {
 	//IHealthManager implimentations

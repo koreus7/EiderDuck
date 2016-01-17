@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FoodPickup : MonoBehaviour {
+
+/// <summary>
+/// Food pickup.
+/// 
+/// Adds food to the players inventory and then destroys itself on collision.
+/// </summary>
+public class FoodPickup : MonoBehaviour 
+{
 
 	public string foodName = "Apple";
 

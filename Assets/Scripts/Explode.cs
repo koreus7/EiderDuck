@@ -1,8 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Explode : MonoBehaviour {
 
+/// <summary>
+/// Explode.
+/// 
+/// Cause all entities in a radius to recieve an explosion force
+/// and some damage.
+/// </summary>
+public class Explode : MonoBehaviour
+{
+
+	//How big each property is in relation to the explosion amount.
 	public float radiusMultiplier = 15.0f;
 	public float damageMultiplier = 1.0f;
 	public float forceMultiplier  = 5500.0f;
