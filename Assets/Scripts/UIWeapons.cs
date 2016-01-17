@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class Weapons : MonoBehaviour {
+public class UIWeapons : MonoBehaviour {
 	
 	public class weapon {
 		public string name;
@@ -35,7 +35,8 @@ public class Weapons : MonoBehaviour {
 	public Sprite fireballImg;
 	public Sprite bowImg;
 	public Sprite magicImg;
-	
+
+
 	void Awake () {
 		currentWeapons.Add (new weapon ("Sword", 2, swordImg, true));
 		currentWeapons.Add (new weapon ("Fireball", 3, fireballImg, true));
@@ -55,9 +56,7 @@ public class Weapons : MonoBehaviour {
 		foreach (weapon w in currentWeapons) {
 			if(w.name == name) {
 				if(w.available) {
-					//dothingshere
 					weaponUIText.text = w.name;
-					//eating food stuff goes in here, for changing the player health etc
 				}
 			}
 		}

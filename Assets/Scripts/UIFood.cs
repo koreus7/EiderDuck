@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class Food : MonoBehaviour {
+public class UIFood : MonoBehaviour {
 
 	public class food {
 		public string name;

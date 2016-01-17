@@ -93,7 +93,10 @@ public class WeaponManager : MonoBehaviour {
 			//Valid index so just set it.
 			_selectedWeaponIndex = i;
 			_selectedWeaponName  =  weapons[i].name;
-			RefreshActiveWeapons ();	
+			RefreshActiveWeapons ();
+
+			//Hack to integrate UI Code (UI Code needs refactoring).
+			transform.parent.GetComponent<UIWeapons>().weaponUIText.text = _selectedWeaponName;
 		}
 	}
 

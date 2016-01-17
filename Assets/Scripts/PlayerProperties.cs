@@ -34,7 +34,9 @@ public class PlayerProperties : MonoBehaviour {
 
 	public int Score = 0;
 
+	public DuckUI healthUI;
 
+	private const float healthUIMultiplier = 100.0f;
 
 	public PlayerProperties()
 	{
@@ -48,10 +50,15 @@ public class PlayerProperties : MonoBehaviour {
 		_health = defaultHealth;//PlayerPrefs.GetFloat ("health", defaultHealth);
 		DificultyLevel = PlayerPrefs.GetInt ("difficulty");
 	}
+
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		healthUI.maxHealth = (int)Mathf.Floor (defaultHealth * healthUIMultiplier);
+
+		healthUI.SetHealth ( (int)Mathf.Floor (_health * healthUIMultiplier) );
+
 		if (_health < 1) 
 		{
 			Die();

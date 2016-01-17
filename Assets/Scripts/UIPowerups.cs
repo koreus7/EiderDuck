@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class Powerups : MonoBehaviour {
+public class UIPowerups : MonoBehaviour {
 
 	public class powerup {
 		public string name;

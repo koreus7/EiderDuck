@@ -13,28 +13,38 @@ public class DuckUI : MonoBehaviour {
 	int health;
 
 	void Start () {
-		addHealth (0);
+		AddHealth (0);
 	}
 
 	void Update () {
 		//testings
 		if (Input.GetKey (KeyCode.U)) {
-			addHealth (5);
+			AddHealth (5);
 		}
 		if(Input.GetKey(KeyCode.I)) {
-			addHealth (-5);
+			AddHealth (-5);
 		}
 	}
 
-	//addHealth(0) to update UI with no change
-	void addHealth (int amount) {
-		health = Mathf.Clamp (health + amount, 0, maxHealth);
+	void AddHealth (int amount) 
+	{
+		SetHealth (health + amount);
+	}
+
+	public void SetHealth(int amount)
+	{
+		health = Mathf.Clamp (amount, 0, maxHealth);
+		UpdateVisuals ();
+	}
+
+	void UpdateVisuals()
+	{
 		Vector3 newScale = healthBarBackground.sizeDelta;
 		newScale.x = Mathf.Clamp(maxHealthBarWidth/maxHealth*health, 0, maxHealthBarWidth);
 		healthBarBackground.sizeDelta = newScale;
 		healthBarText.GetComponent<Text>().text = healthPrefix + health.ToString ();
 		healthBarBackground.GetComponent<Image> ().color = new Color (1 - ((float)(health)/maxHealth), ((float)(health)/maxHealth), 0, 1);
-		Debug.Log (health / maxHealth);
+
 	}
 
 }

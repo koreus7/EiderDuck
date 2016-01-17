@@ -22,8 +22,9 @@ public class Menu : MonoBehaviour {
 	bool weaponOpen = false;
 	bool powerupOpen = false;
 
+
 	//Food
-	public Food food;
+	public UIFood food;
 	public Text nameText;
 	public Text energyText;
 	public Text healthText;
@@ -31,14 +32,15 @@ public class Menu : MonoBehaviour {
 	public Image foodImage;
 
 	//weapons
-	public Weapons weapons;
+	public UIWeapons weapons;
 	public Text weaponNameText;
 	public Text weaponDamageText;
 	public Text weaponAvailableText;
 	public Image weaponImage;
 
+
 	//powerups
-	public Powerups powerups;
+	public UIPowerups powerups;
 	
 	int currentFoodIndex = 0;
 	int currentWeaponIndex = 0;
@@ -49,18 +51,21 @@ public class Menu : MonoBehaviour {
 		updateWeaponUI ();
 		updatePowerupGUI ();
 	}
-	
+
+
+	private void LoadSettings()
+	{
+		difficultySlider.value = PlayerProperties.Inst.DificultyLevel;
+	}
+
 	// Update is called once per frame
 	void LateUpdate () {
 		if (Input.GetButtonDown ("Menu")) {
 			if (menuOpen == false) {
 				LoadSettings();
-				cursorStateBefore = Cursor.visible;
-				Cursor.visible = true;
 				openMenuPanel ();
 			} else {
 				closeMenuPanel();
-				Cursor.visible = cursorStateBefore;
 			}
 		}
 	}
