@@ -128,22 +128,6 @@ Prefab:
       propertyPath: m_Name
       value: Root
       objectReference: {fileID: 0}
-    - target: {fileID: 11475790, guid: ab75c0326661d4da8a5f1486ef5b92fd, type: 2}
-      propertyPath: explodeColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475790, guid: ab75c0326661d4da8a5f1486ef5b92fd, type: 2}
-      propertyPath: explodeColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475790, guid: ab75c0326661d4da8a5f1486ef5b92fd, type: 2}
-      propertyPath: explodeColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 476478, guid: ab75c0326661d4da8a5f1486ef5b92fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: .319999993
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab75c0326661d4da8a5f1486ef5b92fd, type: 2}
   m_IsPrefabParent: 0

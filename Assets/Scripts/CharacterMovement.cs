@@ -105,6 +105,15 @@ public class CharacterMovement : MonoBehaviour
 			lastDirectionSent = directionToSend;
 		}
 
+		//If the player doesn't want to go anywhere
+		if (input.y == 0 && input.x == 0)
+		{
+			//This is called every frame so it will stop the
+			//animation at the first frame making it look like the
+			//duck is standing still.
+			lastDirectionSent = "";
+			animator.SetTrigger("walkDown");
+		}
 	}
 	
 	void FixedUpdate()

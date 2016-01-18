@@ -2579,7 +2579,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.71000004, y: .00999999978, z: 0}
+  m_LocalPosition: {x: .319999993, y: .00999999978, z: 0}
   m_LocalScale: {x: 1.44837523, y: .327975601, z: .116032876}
   m_Children: []
   m_Father: {fileID: 441998}
@@ -7509,7 +7509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a76db80b70654588b7bbd6dfd578628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeColor: {r: 1, g: 0, b: .388235331, a: 0}
+  explodeColor: {r: 1, g: 1, b: 1, a: 0}
   DificultyLevel: 0
   defaultHealth: 3
   hitSound: {fileID: 8300000, guid: 978cd86e39884428085eb63886781475, type: 3}
