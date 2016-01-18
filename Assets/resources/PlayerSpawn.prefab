@@ -821,6 +821,7 @@ GameObject:
   - 114: {fileID: 11493916}
   - 114: {fileID: 11477668}
   - 114: {fileID: 11417208}
+  - 114: {fileID: 11483678}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8070,6 +8071,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11483678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a6203084ee347ce8093e6ceae9f969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11483778
 MonoBehaviour:
   m_ObjectHideFlags: 1

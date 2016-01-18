@@ -1,17 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CharacterMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WarpOnStart.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerProperties.cs" Line="51" Column="48" />
+      <File FileName="Assets/Scripts/PlayerProperties.cs" Line="128" Column="10" />
       <File FileName="Assets/Scripts/PlayerSpawn.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/WeaponManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FireBallControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/Powerups/MovementPowerup.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharacterMovement.cs" Line="98" Column="34" />
+      <File FileName="Assets/Scripts/CharacterMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/Powerups/Powerups.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PowerupPickup.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FoodPickup.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/Menu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WarpOnStart.cs" Line="18" Column="41" />
+      <File FileName="Assets/Scripts/SwordSlashController.cs" Line="69" Column="4" />
+      <File FileName="Assets/Scripts/SceneSwitcher.cs" Line="48" Column="3" />
+      <File FileName="Assets/Scripts/Timer.cs" Line="31" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
