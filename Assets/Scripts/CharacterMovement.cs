@@ -15,7 +15,8 @@ public class CharacterMovement : MonoBehaviour
 	
 	bool _swimming;
 	bool _inWater;
-	
+
+	public Animator animator;
 	
 	public float normalDrag = 10f;
 	public float normalMass = 0.1f;
@@ -38,6 +39,10 @@ public class CharacterMovement : MonoBehaviour
 	
 	float slowTimeElapsed = 0.0f;
 	bool currentlySlowed;
+
+
+	//Last direction we sent to the animator
+	string lastDirectionSent = "";
 
 
 	// tracks if the player can or can't move
@@ -67,6 +72,40 @@ public class CharacterMovement : MonoBehaviour
 		slowEffect.SendMessage("StartEffect");
 		slowTimeElapsed = 0.0f;
 	}
+
+	void UpdateWalkDirection( Vector2 input)
+	{
+		string directionToSend = "";
+		if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+		{
+			if (input.x > 0)
+			{
+				directionToSend = "walkRight";
+			}
+			else
+			{
+				directionToSend = "walkLeft";
+			}
+		} 
+		else
+		{
+			if (input.y > 0)
+			{
+				directionToSend = "walkUp";
+			}
+			else
+			{
+				directionToSend = "walkDown";
+			}
+		}
+
+		if (directionToSend != lastDirectionSent)
+		{
+			animator.SetTrigger(directionToSend);
+			lastDirectionSent = directionToSend;
+		}
+
+	}
 	
 	void FixedUpdate()
 	{
@@ -81,9 +120,12 @@ public class CharacterMovement : MonoBehaviour
 
 		_inputAxes.x = Input.GetAxis ("Horizontal");
 		_inputAxes.y = Input.GetAxis ("Vertical"); 
-		
-		
+
+		UpdateWalkDirection (_inputAxes);
+
 		Vector2 force = _inputAxes * speed * speedModifier;
+
+
 
 		UpdateSlowState ();
 
@@ -114,7 +156,7 @@ public class CharacterMovement : MonoBehaviour
 		_rigidBody.mass = swimmingMass;
 		_rigidBody.drag = swimmingDrag;
 		_swimming = true;
-		gameObject.BroadcastMessage ("StartedSwimming");
+		gameObject.BroadcastMessage ("StartedSwimming", SendMessageOptions.DontRequireReceiver);
 	}
 	
 	public void StartWalking()
@@ -122,7 +164,7 @@ public class CharacterMovement : MonoBehaviour
 		_rigidBody.mass = normalMass;
 		_rigidBody.drag = normalDrag;
 		_swimming = false;
-		gameObject.BroadcastMessage ("StartedWalking");
+		gameObject.BroadcastMessage ("StartedWalking", SendMessageOptions.DontRequireReceiver);
 	}
 	
 	
