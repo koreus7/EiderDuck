@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour {
 	public GameObject powerupPanel;
 	public GameObject powerupSpriteHolder;
 	public GameObject menuButton;
+	public GameObject objectives;
 	public Slider volumeSlider;
 	public Slider difficultySlider;
 	bool menuOpen = false;
@@ -79,6 +80,8 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void openMenuPanel() {
+		objectives.SetActive (true);
+		objectives.GetComponent<ObjectivesUIManager> ().UpdateUI ();
 		menuPanel.SetActive (true);
 		menuOpen = true;
 		menuButton.SetActive (false);
@@ -86,6 +89,7 @@ public class Menu : MonoBehaviour {
 
 	}
 	public void closeMenuPanel() {
+		objectives.SetActive (false);
 		menuPanel.SetActive (false);
 		menuOpen = false;
 		menuButton.SetActive (true);

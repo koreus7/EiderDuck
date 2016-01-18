@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ObjectivesUIManager.cs" />
      <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
      <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />
      <Compile Include="Assets\Scripts\AI\FrogAI.cs" />
@@ -71,6 +72,7 @@
      <Compile Include="Assets\Scripts\KnockbackArgs.cs" />
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\NearTrigger.cs" />
+     <Compile Include="Assets\Scripts\Objectives\Objectives.cs" />
      <Compile Include="Assets\Scripts\ParticleAutoDelete.cs" />
      <Compile Include="Assets\Scripts\ParticlesOnDie.cs" />
      <Compile Include="Assets\Scripts\PauseManager.cs" />
@@ -243,17 +245,11 @@
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="pseudoSinCos">
  <HintPath>/Users/user/Documents/Unity/EiderDuck/Assets/Plugins/2DLightAssets/Scripts/Helpers/pseudoSinCos.dll</HintPath>
