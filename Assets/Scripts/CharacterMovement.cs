@@ -30,6 +30,9 @@ public class CharacterMovement : MonoBehaviour
 	
 	//How much we slow down when slowed.
 	public float slowPercentage  = 0.4f;
+
+	//For powerups and status effects.
+	public float speedModifier = 1.0f;
 	
 	public GameObject slowEffect;
 	
@@ -80,7 +83,7 @@ public class CharacterMovement : MonoBehaviour
 		_inputAxes.y = Input.GetAxis ("Vertical"); 
 		
 		
-		Vector2 force = _inputAxes * speed;
+		Vector2 force = _inputAxes * speed * speedModifier;
 
 		UpdateSlowState ();
 

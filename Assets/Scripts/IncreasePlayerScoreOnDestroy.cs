@@ -3,7 +3,7 @@ using System.Collections;
 
 public class IncreasePlayerScoreOnDestroy : MonoBehaviour {
 
-	int amount = 10;
+	public int amount = 10;
 
 	void OnDestroy()
 	{

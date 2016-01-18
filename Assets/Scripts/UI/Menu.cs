@@ -40,7 +40,7 @@ public class Menu : MonoBehaviour {
 
 
 	//powerups
-	public UIPowerups powerups;
+	public Powerups powerups;
 	
 	int currentFoodIndex = 0;
 	int currentWeaponIndex = 0;
@@ -82,7 +82,7 @@ public class Menu : MonoBehaviour {
 		menuPanel.SetActive (true);
 		menuOpen = true;
 		menuButton.SetActive (false);
-		Time.timeScale = 0.00001f;
+		PauseManager.Pause ();
 
 	}
 	public void closeMenuPanel() {
@@ -94,7 +94,7 @@ public class Menu : MonoBehaviour {
 		closeFood ();
 		closeWeapons ();
 		closePowerups ();
-		Time.timeScale = 1;
+		PauseManager.Resume ();
 
 	}
 	public void openBackpack(){
@@ -232,13 +232,12 @@ public class Menu : MonoBehaviour {
 	void updatePowerupGUI () {
 		int count = 0;
 		foreach (Image i in powerupSpriteHolder.GetComponentsInChildren<Image>()) {
-			i.sprite = powerups.currentPowerups[count].img;
-			i.gameObject.GetComponent<powerupinfo>().hoverText = powerups.currentPowerups[count].description;
-			Debug.Log (powerups.currentPowerups[count].available);
-			if(powerups.currentPowerups[count].available) {
+			i.sprite = powerups.allPowerups[count].img;
+			i.gameObject.GetComponent<powerupinfo>().hoverText = powerups.allPowerups[count].description;
+			Debug.Log (powerups.allPowerups[count].available);
+			if(powerups.allPowerups[count].available) {
 				i.color = new Color(255,255,255,255);
 			} else {
-				Debug.Log ("Set to gray");
 				i.color = new Color(0.4f,0.4f,0.4f,0.25f);
 			}
 			count ++;

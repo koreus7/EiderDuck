@@ -46,14 +46,23 @@ public class FireBallControl : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (!PauseManager.Paused)
+		{
+			GetInput();
+			UpdateState();
+		}
+	}
 
+	void GetInput()
+	{
+		
 		if(Input.GetButtonDown(buttonName))
 		{
 			held = true;
 		}
 		if (Input.GetButtonUp (buttonName))
 		{
-
+			
 			//Fire a fireball.
 			Release(heldTime);
 			fireSoundSource.Play();
@@ -61,13 +70,17 @@ public class FireBallControl : MonoBehaviour
 			heldTime = 0.0f;
 		}
 
+	}
+
+	void UpdateState()
+	{
 		if (held)
 		{
 			chargeSoundSource.enabled = true;
-
+			
 			heldTime += Time.deltaTime;
 			float percentageCharged = Mathf.Clamp (heldTime / fullChargeTime, 0f, 1f);
-
+			
 			//Low pass goes from start to finish frequency based on percentage charged.
 			chargeLowPass.cutoffFrequency = startFrequency + percentageCharged * (finishFrequency - startFrequency);
 		} 
@@ -75,9 +88,8 @@ public class FireBallControl : MonoBehaviour
 		{
 			chargeSoundSource.enabled = false;
 		}
-
+		
 	}
-
 
 
 	void Release(float heldTime)

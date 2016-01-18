@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using DG.Tweening;
 
 public class PlayerProperties : MonoBehaviour {
 
@@ -32,11 +34,34 @@ public class PlayerProperties : MonoBehaviour {
 	private AudioSource _audioSource;
 	private float _health = 0;
 
-	public int Score = 0;
+	private int _score;
+
+	public int Score 
+	{ 
+		get
+		{
+			return _score;
+		} 
+		set
+		{
+			_score = value;
+			pointsText.text = value.ToString();
+
+			//Make the score text pop up to show it has changed.
+			pointsText.gameObject.transform.DOScale(3.5f,0.25f).SetEase(Ease.InBounce).OnComplete( ()=>{
+				pointsText.gameObject.transform.DOScale(1.0f,0.1f).SetEase(Ease.InOutCubic);
+			});
+
+		} 
+	}
 
 	public DuckUI healthUI;
 
+	public Text pointsText;
+
 	private const float healthUIMultiplier = 100.0f;
+
+
 
 	public PlayerProperties()
 	{
@@ -46,9 +71,10 @@ public class PlayerProperties : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		_health = defaultHealth;
 		_audioSource = GetComponent<AudioSource> ();
-		_health = defaultHealth;//PlayerPrefs.GetFloat ("health", defaultHealth);
 		DificultyLevel = PlayerPrefs.GetInt ("difficulty");
+		Score = 0;
 	}
 
 	

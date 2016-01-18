@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PauseManager.cs" />
      <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
      <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />
      <Compile Include="Assets\Scripts\AI\FrogAI.cs" />
@@ -57,7 +58,6 @@
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\ComponentExtensions.cs" />
      <Compile Include="Assets\Scripts\CustomCursorOnEnable.cs" />
-     <Compile Include="Assets\Scripts\DuckUI.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Explode.cs" />
      <Compile Include="Assets\Scripts\ExplodeOnEnemy.cs" />
@@ -70,13 +70,13 @@
      <Compile Include="Assets\Scripts\IncreasePlayerScoreOnDestroy.cs" />
      <Compile Include="Assets\Scripts\KillEnemy.cs" />
      <Compile Include="Assets\Scripts\KnockbackArgs.cs" />
-     <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\NearTrigger.cs" />
      <Compile Include="Assets\Scripts\ParticleAutoDelete.cs" />
      <Compile Include="Assets\Scripts\ParticlesOnDie.cs" />
      <Compile Include="Assets\Scripts\PlayerProperties.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
+     <Compile Include="Assets\Scripts\PowerupPickup.cs" />
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
      <Compile Include="Assets\Scripts\SelfDestructTimer.cs" />
      <Compile Include="Assets\Scripts\ShockwaveSizeInterface.cs" />
@@ -86,12 +86,16 @@
      <Compile Include="Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\Scripts\SwordSlashController.cs" />
      <Compile Include="Assets\Scripts\TextBoxManager.cs" />
-     <Compile Include="Assets\Scripts\UIFood.cs" />
-     <Compile Include="Assets\Scripts\UIPowerups.cs" />
-     <Compile Include="Assets\Scripts\UIWeapons.cs" />
+     <Compile Include="Assets\Scripts\UI\DuckUI.cs" />
+     <Compile Include="Assets\Scripts\UI\Menu.cs" />
+     <Compile Include="Assets\Scripts\UI\Powerups\MovementPowerup.cs" />
+     <Compile Include="Assets\Scripts\UI\Powerups\Powerup.cs" />
+     <Compile Include="Assets\Scripts\UI\Powerups\Powerups.cs" />
+     <Compile Include="Assets\Scripts\UI\Powerups\powerupinfo.cs" />
+     <Compile Include="Assets\Scripts\UI\UIFood.cs" />
+     <Compile Include="Assets\Scripts\UI\UIWeapons.cs" />
      <Compile Include="Assets\Scripts\Utils\Polo.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
-     <Compile Include="Assets\Scripts\powerupinfo.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
