@@ -11,3 +11,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EastCampus.unity
   - enabled: 1
     path: Assets/Scenes/RonCookeHub.unity
+  - enabled: 1
+    path: Assets/Demo Scenes/RCH.unity
+  - enabled: 1
+    path: Assets/Demo Scenes/Cell.unity
+  - enabled: 1
+    path: Assets/Demo Scenes/Hes East.unity
