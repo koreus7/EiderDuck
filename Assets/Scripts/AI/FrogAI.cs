@@ -33,6 +33,8 @@ public class FrogAI : MonoBehaviour
 
 	private Transform _target;
 
+	public Animator animator;
+
 
 	//Components
 	private BoxCollider2D 	_boxCollider;
@@ -45,6 +47,7 @@ public class FrogAI : MonoBehaviour
 
 	private Vector3 hopTarget 			= new Vector2();
 	private Vector3 positionBeforeHop 	= new Vector2();
+
 
 
 	void Start () 
@@ -77,19 +80,20 @@ public class FrogAI : MonoBehaviour
 
 	void UpdateHopState()
 	{
+
 		_elapsedSinceHop += Time.deltaTime;
-		
+
 		//Look where the target is and store it early (so it is not perfectly accurate).
 		if (_elapsedSinceHop > hopPeriod - hopLatency)
 		{
-			StoreTargetPosition();
+			StoreTargetPosition ();
 		}
-		
+
 
 		//Timer finished so start hopping.
-		if (_elapsedSinceHop > hopPeriod )
+		if (_elapsedSinceHop > hopPeriod)
 		{
-			StartHop();
+			StartHop ();
 		}
 
 		//If we are hopping this frame.
@@ -97,18 +101,19 @@ public class FrogAI : MonoBehaviour
 		{
 
 			//If the hop is finished
-			if(_elapsedSinceHop > hopTime)
+			if (_elapsedSinceHop > hopTime)
 			{
-				EndHop();
-			}
-			else 
+				EndHop ();
+			} 
+			else
 			{
-				CalculateHopPosition();
+				CalculateHopPosition ();
 			}
 		}
 
 		//Only when we hit the ground do we want to collide.
 		_boxCollider.isTrigger = _hopping;
+
 	}
 
 
@@ -163,9 +168,7 @@ public class FrogAI : MonoBehaviour
 		}
 		else
 		{
-			//If it will take more than three hops then just hop around aimlessley instead.
-			Vector3 direction = new Vector3 (Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f));
-			hopTarget = direction * Random.Range (0.3f, range);
+			//Wait.
 		}
 
 
@@ -176,6 +179,10 @@ public class FrogAI : MonoBehaviour
 		_elapsedSinceHop = 0.0f;
 		positionBeforeHop = transform.position;
 		_hopping = true;
+
+		Vector3 movementVector = _target.position - transform.position;
+
+		animator.SetTrigger ("jump" + Utils.MainDirectionString (movementVector));
 	}
 
 	void EndHop()

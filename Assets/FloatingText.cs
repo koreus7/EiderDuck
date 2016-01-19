@@ -24,6 +24,7 @@ public class FloatingText : MonoBehaviour
 
 	private float _elapsed;
 
+	float finishY;
 
 	public void BeginFloating()
 	{
@@ -46,6 +47,8 @@ public class FloatingText : MonoBehaviour
 		});
 
 
+		finishY = 0.07f * Camera.current.pixelHeight;
+
 		//_rect.transform.DOLocalMoveY (, runTime);
 	}
 
@@ -53,7 +56,7 @@ public class FloatingText : MonoBehaviour
 	{
 		_elapsed += Time.deltaTime;
 
-		float finishY = 0.07f * Camera.current.pixelHeight;
+	
 		_rect.position = source.position + new Vector3 (0, finishY * (_elapsed / runTime), 0);
 
 	}
