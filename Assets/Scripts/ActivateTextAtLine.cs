@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ActivateTextAtLine : MonoBehaviour {
+public class ActivateTextAtLine : MonoBehaviour
+{
 
 	public TextAsset theText;
 
@@ -18,7 +19,13 @@ public class ActivateTextAtLine : MonoBehaviour {
 	public bool assignObjective;
 
 	//The objective to be added if assignObjective is true.
-	public string objectiveName;
+	public string asignObjectiveName;
+
+	//If we complete an objective by having this dialog.
+	public bool completeObjective;
+
+	//The objective to be completed if comleteObjective is true.
+	public string completeObjectiveName;
 
 
 	TextBoxManager textBoxManager;
@@ -40,9 +47,20 @@ public class ActivateTextAtLine : MonoBehaviour {
 			textBoxManager.endAtLine = endLine;
 			textBoxManager.EnableTextBox ();
 
+			var objectives = PlayerProperties.Player.GetComponent<Objectives> ();
 			if(assignObjective)
 			{
-				PlayerProperties.Player.GetComponent<Objectives>().AddObjective(objectiveName);
+				objectives.AddObjective(asignObjectiveName);
+
+
+				FloatingTextManager.MakeFloatingText (transform, "Objective Get!", Color.white);
+			}
+
+			if (completeObjective)
+			{
+				objectives.CompleteObjective (completeObjectiveName);
+
+				FloatingTextManager.MakeFloatingText (transform, "Objective Complete!", Color.green);
 			}
 
 			if (destroyWhenActivated)

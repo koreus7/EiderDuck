@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FloatingText.cs" />
+     <Compile Include="Assets\FloatingTextManager.cs" />
      <Compile Include="Assets\ObjectivesUIManager.cs" />
      <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
      <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />

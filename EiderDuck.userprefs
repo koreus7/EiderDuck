@@ -1,14 +1,16 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CannonBallSpawner.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FloatingText.cs">
     <Files>
+      <File FileName="Assets/Scripts/UI/Menu.cs" Line="84" Column="1" />
       <File FileName="Assets/Scripts/Objectives/Objectives.cs" Line="13" Column="3" />
       <File FileName="Assets/ObjectivesUIManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ActivateTextAtLine.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TextBoxManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/Menu.cs" Line="88" Column="25" />
-      <File FileName="Assets/Scripts/FireProjectile.cs" Line="43" Column="3" />
-      <File FileName="Assets/Scripts/CannonBallSpawner.cs" Line="22" Column="60" />
+      <File FileName="Assets/Scripts/FireProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CannonBallSpawner.cs" Line="21" Column="4" />
+      <File FileName="Assets/Scripts/Camera/CameraFollow.cs" Line="45" Column="101" />
+      <File FileName="Assets/FloatingText.cs" Line="23" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

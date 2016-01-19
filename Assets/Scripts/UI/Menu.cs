@@ -238,7 +238,6 @@ public class Menu : MonoBehaviour {
 		foreach (Image i in powerupSpriteHolder.GetComponentsInChildren<Image>()) {
 			i.sprite = powerups.allPowerups[count].img;
 			i.gameObject.GetComponent<powerupinfo>().hoverText = powerups.allPowerups[count].description;
-			Debug.Log (powerups.allPowerups[count].available);
 			if(powerups.allPowerups[count].available) {
 				i.color = new Color(255,255,255,255);
 			} else {

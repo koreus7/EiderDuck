@@ -28,7 +28,7 @@ public class PlayerProperties : MonoBehaviour {
 
 	public int DificultyLevel;
 
-	public float defaultHealth = 3;
+	public float defaultHealth = 300;
 	public AudioClip hitSound;
 
 	private AudioSource _audioSource;
@@ -59,7 +59,6 @@ public class PlayerProperties : MonoBehaviour {
 
 	public Text pointsText;
 
-	private const float healthUIMultiplier = 100.0f;
 
 
 
@@ -81,9 +80,9 @@ public class PlayerProperties : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		healthUI.maxHealth = (int)Mathf.Floor (defaultHealth * healthUIMultiplier);
+		healthUI.maxHealth = (int)Mathf.Floor (defaultHealth);
 
-		healthUI.SetHealth ( (int)Mathf.Floor (_health * healthUIMultiplier) );
+		healthUI.SetHealth ( (int)Mathf.Floor (_health ) );
 
 		if (_health < 1) 
 		{
@@ -107,19 +106,46 @@ public class PlayerProperties : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		if (coll.gameObject.name.StartsWith("Enemy")) {
-			_health -= 1;
+			TakeDamage (100);
 			_audioSource.PlayOneShot(hitSound);
 			coll.gameObject.BroadcastMessage("Hit");
 		}
 	}
 
+
+	private string DamageString(float amount)
+	{
+		return ((int)Mathf.Floor (amount)).ToString ();
+	}
+
+	private void MakeDamageText(float amount)
+	{
+		if (amount != 0)
+		{
+			Color color = Color.red;
+			string text = "";
+
+			if (amount > 0)
+			{
+				text = "+";
+				color = Color.green;
+			}
+
+			text += ((int)Mathf.Floor (amount)).ToString ();
+
+			FloatingTextManager.MakeFloatingText (transform, text, color);
+		}
+	}
+
 	public void TakeDamage(float amount)
 	{
+		MakeDamageText (-amount);
 		_health -= amount;
 	}
 
 	public void IncreaseHealth(float amount)
 	{
+		MakeDamageText (amount);
 		_health += amount;
 	}
 
