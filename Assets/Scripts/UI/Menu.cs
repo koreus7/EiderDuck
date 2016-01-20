@@ -80,8 +80,8 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void openMenuPanel() {
-		objectives.SetActive (true);
-		objectives.GetComponent<ObjectivesUIManager> ().UpdateUI ();
+		//objectives.SetActive (true);
+		//objectives.GetComponentInChildren<ObjectivesUIManager> ().UpdateUI ();
 		menuPanel.SetActive (true);
 		menuOpen = true;
 		menuButton.SetActive (false);

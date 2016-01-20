@@ -24,8 +24,6 @@ public class WarpOnStart : MonoBehaviour
 				transform.position = warpZone.gameObject.transform.position;
 			}
 		}
-
-	
 	}
 
 }

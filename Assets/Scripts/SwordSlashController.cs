@@ -14,6 +14,9 @@ public class SwordSlashController : MonoBehaviour
 	public GameObject sword;
 	SpriteRenderer _sprite;
 
+	public AudioClip[] swipeSounds;
+	public AudioSource audioSource;
+
 	bool directionFlip;
 
 	void Start()
@@ -45,6 +48,10 @@ public class SwordSlashController : MonoBehaviour
 
 	void Swing()
 	{
+
+		audioSource.clip = swipeSounds [Random.Range (0, swipeSounds.Length)];
+		audioSource.Play ();
+
 		var ourScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		var direction = Input.mousePosition - ourScreenPosition; 
 		
@@ -75,8 +82,8 @@ public class SwordSlashController : MonoBehaviour
 
 		EnableSword ();
 
-		transform.DORotate (new Vector3 (0, 0, finishAngle), 0.15f, RotateMode.Fast)
-			.SetEase (Ease.OutQuad)
+		transform.DORotate (new Vector3 (0, 0, finishAngle), 0.2f, RotateMode.Fast)
+			.SetEase (Ease.Linear)
 			.OnComplete (() => {
 					DisableSword();
 			});;

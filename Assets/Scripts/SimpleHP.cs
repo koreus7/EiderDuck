@@ -37,15 +37,16 @@ public class SimpleHP : MonoBehaviour, IHealthManager
 	//Take specific damage.
 	public void TakeDamage(float amount)
 	{
-		FloatText (amount);
 		health -= amount;
+		FloatText (amount);
 	}
 
 	//Take damage based on our resitance.
 	public void Hit()
 	{
-		FloatText (hitDamage);
+
 		health -= hitDamage;
+		FloatText (hitDamage);
 	}
 
 	void FloatText(float amount)

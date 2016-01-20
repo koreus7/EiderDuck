@@ -16,16 +16,12 @@ public class Objectives : MonoBehaviour
 		objectiveMap = new Dictionary<string, bool>();
 	}
 
-	public void Start()
-	{
-		
-	}
-
 
 	public void AddObjective(string name)
 	{
 		if (!objectiveMap.ContainsKey (name))
 		{
+			FloatingTextManager.MakeFloatingText (transform, name, Color.white, 2.0f);
 			objectiveMap.Add (name, false);
 		}
 	}
@@ -35,6 +31,7 @@ public class Objectives : MonoBehaviour
 	{
 		if(objectiveMap.ContainsKey(name))
 		{
+			FloatingTextManager.MakeFloatingText (transform, "Objective Complete!", Color.green);
 			objectiveMap[name] = true;
 		}
 	}

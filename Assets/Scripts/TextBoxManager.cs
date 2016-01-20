@@ -9,6 +9,9 @@ public class TextBoxManager : MonoBehaviour {
 	//Singleton Class.
 	public static TextBoxManager Inst;
 
+	public delegate void DialogFinishAction();
+	public static event DialogFinishAction OnDialogFinish;
+
 	public TextBoxManager()
 	{
 		Inst = this;
@@ -105,6 +108,11 @@ public class TextBoxManager : MonoBehaviour {
 		if (currentLine > endAtLine)
 		{
 			DisableTextBox();
+
+			if (OnDialogFinish != null)
+			{
+				OnDialogFinish ();
+			}
 		}
 	}
 
@@ -131,12 +139,14 @@ public class TextBoxManager : MonoBehaviour {
 
 	void EnablePlayerMovement()
 	{
-		PlayerProperties.Player.GetComponent<CharacterMovement> ().canMove = true;
+		//PlayerProperties.Player.GetComponent<CharacterMovement> ().canMove = true;
+		PauseManager.Resume();
 	}
 
 	void DisablePlayerMovement()
 	{
-		PlayerProperties.Player.GetComponent<CharacterMovement> ().canMove = false;
+		///PlayerProperties.Player.GetComponent<CharacterMovement> ().canMove = false;
+		PauseManager.Pause();
 	}
 
 	public void ReloadScript(TextAsset theText)

@@ -39,7 +39,7 @@ public class FireProjectile : MonoBehaviour {
 
 		direction.Normalize();
 
-		var angle = Quaternion.Euler (0, 0, Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg);
+		var angle = Quaternion.Euler (0, 0, Mathf.Atan2 (-direction.y, -direction.x) * Mathf.Rad2Deg);
 
 		GameObject projectile = (GameObject)Instantiate (projectilePrefab, transform.position, angle);
 

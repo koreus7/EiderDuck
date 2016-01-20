@@ -14,6 +14,11 @@ public class CannonBallImpact : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
+		if (!coll.isTrigger)
+		{
+			Destroy (gameObject);
+		}
+
 		if (coll.gameObject.name == "Player")
 		{
 			coll.gameObject.SendMessage ("TakeDamage", damage);

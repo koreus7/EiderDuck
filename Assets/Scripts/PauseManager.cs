@@ -7,35 +7,42 @@ using System.Collections;
 /// Allows lots of custom behaviors on pause by centralising
 /// pausing and providing pause events to subscribe to.
 /// </summary>
-public class PauseManager : MonoBehaviour 
+public class PauseManager : MonoBehaviour
 {
 	public delegate void PauseAction();
 	public static event PauseAction OnPaused;
 	public static event PauseAction OnResumed;
 	public static bool Paused { get; private set; }
-	
+
+
 	public static void Pause()
 	{
-		if (OnPaused != null)
-		{
-			OnPaused();
-		}
+		Debug.Log ("Pause");
+
 
 		Time.timeScale = 0.00001f;
 
 		Paused = true;
+
+		if (OnPaused != null)
+		{
+			OnPaused();
+		}
 	}
 
 	public static void Resume()
 	{
-		if (OnResumed != null)
-		{
-			OnResumed();
-		}
+		Debug.Log ("Resume");
+
 
 		Time.timeScale = 1.0f;
 
 		Paused = false;
+
+		if (OnResumed != null)
+		{
+			OnResumed();
+		}
 	}
 
 

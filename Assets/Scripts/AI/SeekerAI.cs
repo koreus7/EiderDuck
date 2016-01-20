@@ -14,6 +14,14 @@ public class SeekerAI : MonoBehaviour
 	Rigidbody2D _rigidBody;
 	public float speed = 2.0f;
 
+
+	public SpriteRenderer spriteRenderer;
+	public Sprite upSprite;
+	public Sprite downSprite;
+	public Sprite leftSprite;
+	public Sprite rightSprite;
+	string lastDirection = "";
+
 	//How much we repel other enemies.
 	public float repelance = 1.0f;
 
@@ -41,7 +49,30 @@ public class SeekerAI : MonoBehaviour
 		
 		//Force in the direction of the joining line.
 		Vector2 forceVector = joiningLine2D.normalized * speed * (PlayerProperties.Inst.DificultyLevel + 1);
-		
+
+		string direction = Utils.MainDirectionString (joiningLine);
+
+		if (direction != lastDirection)
+		{
+			switch (direction)
+			{
+				case "Up":
+					spriteRenderer.sprite = upSprite;
+					break;
+				case "Down":
+					spriteRenderer.sprite = downSprite;
+					break;
+				case "Left":
+					spriteRenderer.sprite = leftSprite;
+					break;
+				case "Right":
+					spriteRenderer.sprite = rightSprite;
+					break;
+			}
+		}
+
+		lastDirection = direction;
+
 		
 		if (joiningLine.magnitude > standOffDistance)
 		{

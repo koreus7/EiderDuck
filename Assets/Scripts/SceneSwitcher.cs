@@ -40,6 +40,7 @@ public class SceneSwitcher : MonoBehaviour
 			{
 				other.BroadcastMessage("SceneSwitch");
 				_triggered = true;
+				_elapsed = 0;
 			}
 		}
 	}

@@ -36,8 +36,8 @@ public class UIFood : MonoBehaviour {
 	public Sprite breadImg;
 
 	void Awake () {
-		currentFoods.Add (new food ("Apple", 2, 5, 2, appleImg));
-		currentFoods.Add (new food ("Berries", 3, 1, 3, berryImg));
+		currentFoods.Add (new food ("Apple", 2, 50, 2, appleImg));
+		currentFoods.Add (new food ("Berries", 30, 1, 3, berryImg));
 		currentFoods.Add (new food ("Bread", 4, 10, 5, breadImg));
 	}
 

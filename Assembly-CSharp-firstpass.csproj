@@ -178,6 +178,7 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Multiply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Text\BioChemDialog2.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
      <None Include="Assets\Text\Text.txt" />
      <None Include="Assets\Plugins\2DLightAssets\Shaders\NoTexture.shader" />

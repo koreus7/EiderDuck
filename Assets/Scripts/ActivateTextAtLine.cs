@@ -19,13 +19,17 @@ public class ActivateTextAtLine : MonoBehaviour
 	public bool assignObjective;
 
 	//The objective to be added if assignObjective is true.
-	public string asignObjectiveName;
+	public string assignObjectiveName;
 
 	//If we complete an objective by having this dialog.
 	public bool completeObjective;
 
 	//The objective to be completed if comleteObjective is true.
 	public string completeObjectiveName;
+
+	public bool activateGameObject;
+
+	public GameObject gameObjectToActivate;
 
 
 	TextBoxManager textBoxManager;
@@ -34,8 +38,42 @@ public class ActivateTextAtLine : MonoBehaviour
 	void Start () 
 	{
 		textBoxManager = TextBoxManager.Inst;
+		TextBoxManager.OnDialogFinish += OnDialogFinishHandler;
 	}
 
+
+	public void OnDialogFinishHandler()
+	{
+		TextBoxManager.OnDialogFinish -= OnDialogFinishHandler;
+
+
+		var objectives = PlayerProperties.Player.GetComponent<Objectives> ();
+
+		if(assignObjective)
+		{
+			Timer.New (gameObject, 1.0f, () =>
+			{
+				objectives.AddObjective(assignObjectiveName);
+			});
+		}
+
+		if (completeObjective)
+		{
+			objectives.CompleteObjective (completeObjectiveName);
+
+		}
+
+		if (activateGameObject)
+		{
+			gameObjectToActivate.SetActive (true);
+		}
+
+
+		if (destroyWhenActivated)
+		{
+			Destroy (gameObject);
+		}
+	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
@@ -47,26 +85,7 @@ public class ActivateTextAtLine : MonoBehaviour
 			textBoxManager.endAtLine = endLine;
 			textBoxManager.EnableTextBox ();
 
-			var objectives = PlayerProperties.Player.GetComponent<Objectives> ();
-			if(assignObjective)
-			{
-				objectives.AddObjective(asignObjectiveName);
 
-
-				FloatingTextManager.MakeFloatingText (transform, "Objective Get!", Color.white);
-			}
-
-			if (completeObjective)
-			{
-				objectives.CompleteObjective (completeObjectiveName);
-
-				FloatingTextManager.MakeFloatingText (transform, "Objective Complete!", Color.green);
-			}
-
-			if (destroyWhenActivated)
-			{
-				Destroy (gameObject);
-			}
 		}
 	}
 }

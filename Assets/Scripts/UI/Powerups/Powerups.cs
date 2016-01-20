@@ -47,6 +47,8 @@ public class Powerups : MonoBehaviour
 		powerup.available = true;
 		powerup.Enabled (PlayerProperties.Player);
 		enabledPowerups.Add (powerup);
+
+		FloatingTextManager.MakeFloatingText (transform, powerup.description, Color.blue, 2.0f);
 	}
 
 	public void DisablePowerup(string name)

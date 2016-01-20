@@ -45,15 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AddObjectiveOnStart.cs" />
-     <Compile Include="Assets\FloatingText.cs" />
-     <Compile Include="Assets\FloatingTextManager.cs" />
-     <Compile Include="Assets\ObjectivesUIManager.cs" />
+     <Compile Include="Assets\BiochemDialogFinish.cs" />
      <Compile Include="Assets\Scripts\AI\BomberAI.cs" />
      <Compile Include="Assets\Scripts\AI\DestroyOnDie.cs" />
      <Compile Include="Assets\Scripts\AI\FrogAI.cs" />
      <Compile Include="Assets\Scripts\AI\SeekerAI.cs" />
      <Compile Include="Assets\Scripts\ActivateTextAtLine.cs" />
+     <Compile Include="Assets\Scripts\AddObjectiveOnStart.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Camera\ShakeOnAwake.cs" />
@@ -70,6 +68,8 @@
      <Compile Include="Assets\Scripts\ExtensionMethods\RigidBody2DExtensions.cs" />
      <Compile Include="Assets\Scripts\FireBallControl.cs" />
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
+     <Compile Include="Assets\Scripts\FloatingText.cs" />
+     <Compile Include="Assets\Scripts\FloatingTextManager.cs" />
      <Compile Include="Assets\Scripts\FoodPickup.cs" />
      <Compile Include="Assets\Scripts\HideCursorOnEnable.cs" />
      <Compile Include="Assets\Scripts\IHealthManager.cs" />
@@ -79,11 +79,11 @@
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\NearTrigger.cs" />
      <Compile Include="Assets\Scripts\Objectives\Objectives.cs" />
+     <Compile Include="Assets\Scripts\ObjectivesUIManager.cs" />
      <Compile Include="Assets\Scripts\ParticleAutoDelete.cs" />
      <Compile Include="Assets\Scripts\ParticlesOnDie.cs" />
      <Compile Include="Assets\Scripts\PauseManager.cs" />
      <Compile Include="Assets\Scripts\PlayerProperties.cs" />
-     <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
      <Compile Include="Assets\Scripts\PowerupPickup.cs" />
      <Compile Include="Assets\Scripts\Rotater.cs" />
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\ShockwaveSizeInterface.cs" />
      <Compile Include="Assets\Scripts\SimpleHP.cs" />
      <Compile Include="Assets\Scripts\SimpleHealthBar.cs" />
+     <Compile Include="Assets\Scripts\SimplePacingAnim.cs" />
      <Compile Include="Assets\Scripts\SlowParticlesInterface.cs" />
      <Compile Include="Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\Scripts\SwordSlashController.cs" />
@@ -108,7 +109,6 @@
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
      <Compile Include="Assets\Scripts\WarpOnStart.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
-     <Compile Include="Assets\SimplePacingAnim.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
@@ -183,6 +183,7 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Multiply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Text\BioChemDialog2.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
      <None Include="Assets\Text\Text.txt" />
      <None Include="Assets\Plugins\2DLightAssets\Shaders\NoTexture.shader" />

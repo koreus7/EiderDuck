@@ -106,7 +106,7 @@ public class PlayerProperties : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		if (coll.gameObject.name.StartsWith("Enemy")) {
-			TakeDamage (100);
+			TakeDamage (50);
 			_audioSource.PlayOneShot(hitSound);
 			coll.gameObject.BroadcastMessage("Hit");
 		}
