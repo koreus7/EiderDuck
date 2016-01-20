@@ -6,12 +6,19 @@ public class Objectives : MonoBehaviour
 {
 	public Dictionary<string, bool> objectiveMap  { get; private set;}
 
+	public static Objectives Inst;
 
 
 
 	public Objectives()
 	{
+		Inst = this;
 		objectiveMap = new Dictionary<string, bool>();
+	}
+
+	public void Start()
+	{
+		
 	}
 
 

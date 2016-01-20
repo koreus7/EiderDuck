@@ -8629,7 +8629,7 @@ Prefab:
         type: 3}
     - target: {fileID: 11448972, guid: d868d66940a814a679a6aae9605ff517, type: 2}
       propertyPath: range
-      value: 98.2
+      value: 223.26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d868d66940a814a679a6aae9605ff517, type: 2}
