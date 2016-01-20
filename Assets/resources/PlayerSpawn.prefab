@@ -6570,6 +6570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddae30ffc2ac0d4daff1bc877d739ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentDialog: {fileID: 0}
   textFile: {fileID: 4900000, guid: c68bc356fbb37874f919ab74be4f8b07, type: 3}
   textlines:
   - Hello again my feathered freind.
