@@ -46,7 +46,11 @@ public class FloatingText : MonoBehaviour
 			Destroy(gameObject);
 		});
 
-		finishY = 0.3f * Camera.current.orthographicSize;
+
+		if (Camera.current != null)
+		{
+			finishY = 0.3f * Camera.current.orthographicSize;
+		}
 
 		//_rect.transform.DOLocalMoveY (, runTime);
 	}

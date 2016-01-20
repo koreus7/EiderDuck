@@ -38,20 +38,16 @@ public class ActivateTextAtLine : MonoBehaviour
 	void Start () 
 	{
 		textBoxManager = TextBoxManager.Inst;
-		TextBoxManager.OnDialogFinish += OnDialogFinishHandler;
 	}
 
 
 	public void OnDialogFinishHandler()
 	{
-		TextBoxManager.OnDialogFinish -= OnDialogFinishHandler;
-
-
 		var objectives = PlayerProperties.Player.GetComponent<Objectives> ();
 
 		if(assignObjective)
 		{
-			Timer.New (gameObject, 1.0f, () =>
+			Timer.New (PlayerProperties.Player, 1.0f, () =>
 			{
 				objectives.AddObjective(assignObjectiveName);
 			});
@@ -80,6 +76,7 @@ public class ActivateTextAtLine : MonoBehaviour
 		// finds the player's collider
 		if (other.name == "Player")
 		{
+			textBoxManager.currentDialog = this;
 			textBoxManager.ReloadScript (theText);
 			textBoxManager.currentLine = startLine;
 			textBoxManager.endAtLine = endLine;

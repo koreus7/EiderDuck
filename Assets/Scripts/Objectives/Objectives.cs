@@ -21,7 +21,7 @@ public class Objectives : MonoBehaviour
 	{
 		if (!objectiveMap.ContainsKey (name))
 		{
-			FloatingTextManager.MakeFloatingText (transform, name, Color.white, 2.0f);
+			FloatingTextManager.MakeFloatingText (transform, "New Objective: " + name, Color.white, 4.0f);
 			objectiveMap.Add (name, false);
 		}
 	}

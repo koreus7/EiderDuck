@@ -9,13 +9,15 @@ public class TextBoxManager : MonoBehaviour {
 	//Singleton Class.
 	public static TextBoxManager Inst;
 
-	public delegate void DialogFinishAction();
-	public static event DialogFinishAction OnDialogFinish;
 
 	public TextBoxManager()
 	{
 		Inst = this;
 	}
+
+	[HideInInspector]
+	public ActivateTextAtLine currentDialog;
+
 
 	// Holds text to display in a dialogue box
 	[HideInInspector]
@@ -109,10 +111,7 @@ public class TextBoxManager : MonoBehaviour {
 		{
 			DisableTextBox();
 
-			if (OnDialogFinish != null)
-			{
-				OnDialogFinish ();
-			}
+			currentDialog.OnDialogFinishHandler ();
 		}
 	}
 
